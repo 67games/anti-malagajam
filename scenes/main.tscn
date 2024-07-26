@@ -85,10 +85,8 @@ shape = SubResource("RectangleShape2D_eonbw")
 position = Vector2(0, 66)
 shape = SubResource("RectangleShape2D_leool")
 
-[node name="ZoneBar" type="RigidBody2D" parent="Bar"]
+[node name="ZoneBar" type="StaticBody2D" parent="Bar"]
 unique_name_in_owner = true
-mass = 0.01
-gravity_scale = 0.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Bar/ZoneBar"]
 sprite_frames = SubResource("SpriteFrames_eb6bn")
@@ -100,7 +98,7 @@ disabled = true
 
 [node name="PointBar" type="RigidBody2D" parent="Bar"]
 unique_name_in_owner = true
-position = Vector2(0, 2)
+gravity_scale = 0.1
 lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/PointBar"]
