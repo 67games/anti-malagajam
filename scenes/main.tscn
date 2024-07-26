@@ -1,3 +1,111 @@
-[gd_scene format=3 uid="uid://dyejox02rs62s"]
+[gd_scene load_steps=13 format=3 uid="uid://dyejox02rs62s"]
+
+[ext_resource type="Script" path="res://scripts/bar.gd" id="1_c28dh"]
+[ext_resource type="Texture2D" uid="uid://dhjkhtfl3fsg8" path="res://assets/sprites/bar.png" id="1_nn260"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnouy"]
+atlas = ExtResource("1_nn260")
+region = Rect2(0, 0, 16, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8cwh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnouy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eonbw"]
+size = Vector2(20, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_leool"]
+size = Vector2(20, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xinsy"]
+atlas = ExtResource("1_nn260")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eb6bn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xinsy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0pp6"]
+size = Vector2(6, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77y3t"]
+radius = 3.16228
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61qg"]
+atlas = ExtResource("1_nn260")
+region = Rect2(32, 0, 16, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2aimp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61qg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -2)
+zoom = Vector2(4, 4)
+
+[node name="Bar" type="Node2D" parent="."]
+script = ExtResource("1_c28dh")
+
+[node name="BaseBar" type="AnimatedSprite2D" parent="Bar"]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_b8cwh")
+
+[node name="Top" type="StaticBody2D" parent="Bar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Top"]
+position = Vector2(0, -67)
+shape = SubResource("RectangleShape2D_eonbw")
+
+[node name="Botton" type="StaticBody2D" parent="Bar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Botton"]
+position = Vector2(0, 66)
+shape = SubResource("RectangleShape2D_leool")
+
+[node name="ZoneBar" type="RigidBody2D" parent="Bar"]
+unique_name_in_owner = true
+mass = 0.01
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Bar/ZoneBar"]
+sprite_frames = SubResource("SpriteFrames_eb6bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/ZoneBar"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_d0pp6")
+disabled = true
+
+[node name="PointBar" type="RigidBody2D" parent="Bar"]
+unique_name_in_owner = true
+position = Vector2(0, 2)
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/PointBar"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_77y3t")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Bar/PointBar"]
+sprite_frames = SubResource("SpriteFrames_2aimp")
