@@ -1,16 +1,31 @@
 extends TileMap
 
-#@onready var tile_map = $"."
+@onready var tile_map = $"."
 
 var tattoo_layer = 1
 
+
+
+func _ready():
+	
+	var image = Image.new()
+	image.load("res://assets/sprites/mano.png")
+	var t = ImageTexture.new()
+	t.create_from_image(image)
+	$Sprite.texture = t
+	
+	# Changes only the arrow shape of the cursor.
+	# This is similar to changing it in the project settings.
+	Input.set_custom_mouse_cursor(t)
+
 func _input(_event):
+	
 	if Input.is_action_pressed("click"):
 		
 		var tile_mouse_pos = tile_map.local_to_map(get_global_mouse_position())
 		
 		#Sustituir con las coordenadas correctas del tile del atlas
-		var atlas_cord = Vector2i(48,24)
+		var atlas_cord = Vector2i(1,0)
 		
 		tile_map.set_cell(tattoo_layer, tile_mouse_pos, 0, atlas_cord)
 		
