@@ -59,7 +59,7 @@ func _process(_delta):
 	cursor.position = mouse_position
 	
 	if GameManager.is_painting():
-		zone_bar.scale.y -= 0.01
+		zone_bar.scale.y -= 0.005
 	
 	if zone_bar.scale.y <= 0.05:
 		GameManager.stop_painting()
