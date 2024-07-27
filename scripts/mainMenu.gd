@@ -14,7 +14,7 @@ func _on_mute_pressed():
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	GameManager.change_state(GameManager.States.CREDITS)
 
 
 
