@@ -4,12 +4,19 @@ extends Node
 
 # Possible Game States
 enum States {
+	# State of the game as it is starting
 	BOOTING,
+	# Start Menu of the game
 	START,
+	# Playing some level
 	PLAYING,
+	# When the player failed the game
 	GAME_OVER,
+	# When the game is paused
 	PAUSED,
+	# When the player has won the game
 	FINISHED,
+	# Exiting the game
 	EXIT
 }
 
@@ -73,10 +80,7 @@ func change_state(new_state):
 	print_debug("change_state from %s to %s" % [states_debug_names[current_state], states_debug_names[new_state]])
 	assert(new_state in possible_next_states[current_state], 'Game state change was ilegal')
 	possible_next_states[current_state][new_state].call()
-	print("Current State %s" % current_state)
-	
 	current_state = new_state
-	print("Current State %s" % current_state)
 
 func _ready():
 	# print(get_tree().get_current_scene().name)
