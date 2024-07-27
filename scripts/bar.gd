@@ -58,8 +58,10 @@ func _process(_delta):
 	var mouse_position = get_global_mouse_position()
 	cursor.position = mouse_position
 	
+	var distance = point_bar.position.distance_to(zone_bar.position)
+	
 	if GameManager.is_painting():
-		zone_bar.scale.y -= 0.005
+		zone_bar.scale.y -= 0.0005 * distance
 	
 	if zone_bar.scale.y <= 0.05:
 		GameManager.stop_painting()
@@ -68,8 +70,6 @@ func _process(_delta):
 		frames_since_last_direction_change+=1
 		zone_bar.position += Vector2(0, get_random_y_position_for_bar()*0.5)
 
-	var distance = point_bar.position.distance_to(zone_bar.position)
-		
 	if distance > 20:
 		# shake by distance
 		distance = abs(distance - 20)
