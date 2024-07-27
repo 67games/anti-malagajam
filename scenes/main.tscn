@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyejox02rs62s"]
+[gd_scene load_steps=14 format=3 uid="uid://dyejox02rs62s"]
 
 [ext_resource type="Script" path="res://scripts/bar.gd" id="1_c28dh"]
 [ext_resource type="Texture2D" uid="uid://dhjkhtfl3fsg8" path="res://assets/sprites/bar.png" id="1_nn260"]
+[ext_resource type="Script" path="res://scripts/gameManager.gd" id="3_dre2w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnouy"]
 atlas = ExtResource("1_nn260")
@@ -107,3 +108,6 @@ shape = SubResource("CircleShape2D_77y3t")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Bar/PointBar"]
 sprite_frames = SubResource("SpriteFrames_2aimp")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("3_dre2w")

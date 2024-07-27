@@ -1,1 +1,20 @@
 # anti-malagajam
+
+### Game Machine State
+
+(Draft)
+
+```mermaid
+flowchart TD
+	Start --> Game[Paint Tattoo]
+	Game --> Pause
+	Game --> Lost
+	Game --> Win
+	Win --> Exit
+	Lost --> Exit
+	Pause --> Exit
+	Pause --> Game
+	Win --> Game
+	Lost --> Game
+	Start --> Exit
+```
