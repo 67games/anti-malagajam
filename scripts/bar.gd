@@ -37,8 +37,10 @@ func _release_zone_bar():
 
 func _stop_point_bar():
 	point_bar.freeze = true
+	point_bar.modulate = Color(1, 1, 1, 0)
 func _start_point_bar():
 	point_bar.freeze = false
+	point_bar.modulate = Color(1, 1, 1, 1)
 
 func get_random_y_position_for_bar():
 	if frames_since_last_direction_change > 60:
