@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyejox02rs62s"]
+[gd_scene load_steps=14 format=3 uid="uid://dyejox02rs62s"]
 
-[ext_resource type="Script" path="res://scripts/bar.gd" id="1_c28dh"]
-[ext_resource type="Texture2D" uid="uid://dhjkhtfl3fsg8" path="res://assets/sprites/bar.png" id="1_nn260"]
+[ext_resource type="Script" path="res://scripts/bar.gd" id="1_nmxw6"]
+[ext_resource type="Texture2D" uid="uid://dhjkhtfl3fsg8" path="res://assets/sprites/bar.png" id="2_7vis0"]
+[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="3_ovb6k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnouy"]
-atlas = ExtResource("1_nn260")
+atlas = ExtResource("2_7vis0")
 region = Rect2(0, 0, 16, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8cwh"]
@@ -25,7 +26,7 @@ size = Vector2(20, 7)
 size = Vector2(20, 6)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xinsy"]
-atlas = ExtResource("1_nn260")
+atlas = ExtResource("2_7vis0")
 region = Rect2(16, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eb6bn"]
@@ -46,7 +47,7 @@ size = Vector2(6, 31)
 radius = 3.16228
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d61qg"]
-atlas = ExtResource("1_nn260")
+atlas = ExtResource("2_7vis0")
 region = Rect2(32, 0, 16, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2aimp"]
@@ -67,7 +68,7 @@ position = Vector2(0, -2)
 zoom = Vector2(4, 4)
 
 [node name="Bar" type="Node2D" parent="."]
-script = ExtResource("1_c28dh")
+script = ExtResource("1_nmxw6")
 
 [node name="BaseBar" type="AnimatedSprite2D" parent="Bar"]
 unique_name_in_owner = true
@@ -107,3 +108,9 @@ shape = SubResource("CircleShape2D_77y3t")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Bar/PointBar"]
 sprite_frames = SubResource("SpriteFrames_2aimp")
+
+[node name="Cursor" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(68, 4)
+texture = ExtResource("3_ovb6k")
+centered = false

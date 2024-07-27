@@ -1,37 +1,35 @@
 extends Node2D
 
 var IMPULSE_FORCE = 125
+var SHAKE_RATE = 0.05
 
 @onready var base_bar = %BaseBar
 @onready var zone_bar = %ZoneBar
 @onready var point_bar = %PointBar
+@onready var cursor = %Cursor
 
 var frames_since_last_direction_change = 0
-var number_of_lives = 5 * 60 # Five seconds out of the zone
 var random_y = randi_range(-1, 2)
 var initial_position_zone_bar_x
 
-# var should_point_fall = true
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	rand_from_seed(Time.get_ticks_msec())
 	Engine.max_fps = 60
-	point_bar.max_contacts_reported = 3
-	point_bar.contact_monitor = true
+	
 	initial_position_zone_bar_x = zone_bar.position.x
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
+	var global_position = get_global_mouse_position()
+	cursor.position = global_position
 	frames_since_last_direction_change+=1
 	if frames_since_last_direction_change > 60:
 		random_y = randi_range(-1, 1)
 		frames_since_last_direction_change = 0
-	if zone_bar.position.y <= -46:
+	if zone_bar.position.y <= -36.5:
 		random_y = 1
-	if zone_bar.position.y >= 46:
+	if zone_bar.position.y >= 51.5:
 		random_y = -1
 	zone_bar.position += Vector2(0, random_y*0.5)
 	
@@ -40,17 +38,15 @@ func _process(delta):
 	if distance > 20:
 		# shake by distance
 		distance = abs(distance - 20)
-		var shake = distance * 0.1
-		zone_bar.position.x = initial_position_zone_bar_x + [-1, 1][randi_range(0,1)] * shake
-		
-	
-	# if should_point_fall:
-	# 	point_bar.position += Vector2(0, 1)
+		var shake = distance * SHAKE_RATE
+		cursor.position = (Vector2(cursor.position.x + [-1, 1][randi_range(0,1)] * shake, 
+			cursor.position.y + [-1, 1][randi_range(0,1)] * shake))
 	pass
+	
 
 func _input(event):
+	
 	if event.is_action_pressed("Space"):
-		# should_point_fall = false
 		point_bar.apply_impulse(Vector2(0, -IMPULSE_FORCE))
-	# if event.is_action_released("Space"):
-		# should_point_fall = true
+	pass
+		
