@@ -4,19 +4,13 @@ extends TileMap
 
 var tattoo_layer = 1
 
-
+var MANO = load("res://assets/sprites/cut/mano.png")
 
 func _ready():
 	
-	var image = Image.new()
-	image.load("res://assets/sprites/mano.png")
-	var t = ImageTexture.new()
-	t.create_from_image(image)
-	$Sprite.texture = t
-	
 	# Changes only the arrow shape of the cursor.
 	# This is similar to changing it in the project settings.
-	Input.set_custom_mouse_cursor(t)
+	Input.set_custom_mouse_cursor(MANO)
 
 func _input(_event):
 	
