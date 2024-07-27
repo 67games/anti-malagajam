@@ -1,6 +1,6 @@
 # anti-malagajam
 
-### Game Machine State
+### Game State Machine
 
 (Draft)
 

@@ -11,17 +11,21 @@ config_version=5
 [application]
 
 config/name="Anti-malagajam"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/main_game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[dotnet]
+[autoload]
 
-project/assembly_name="Anti-malagajam"
+GameManager="*res://scripts/gameManager.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="Anti-malagajam"
 
 [input]
 

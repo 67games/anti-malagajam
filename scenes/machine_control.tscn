@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg6yyl3g1bpxx"]
+[gd_scene load_steps=5 format=3 uid="uid://em02hnal1ia3"]
 
 [ext_resource type="Script" path="res://scripts/machine_controller.gd" id="1_avqng"]
-[ext_resource type="Texture2D" uid="uid://mjt63md07o1c" path="res://assets/sprites/cut/culo.png" id="3_anxf1"]
-[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="4_fsq3f"]
+[ext_resource type="Texture2D" uid="uid://beu7jwgu15pxx" path="res://assets/sprites/cut/culo.png" id="3_anxf1"]
+[ext_resource type="Texture2D" uid="uid://cfa0sa45r34ur" path="res://assets/sprites/cut/mano.png" id="4_fsq3f"]
 
 [sub_resource type="TileSet" id="TileSet_h7s7n"]
 tile_size = Vector2i(4, 4)
