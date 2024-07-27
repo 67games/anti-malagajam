@@ -13,12 +13,12 @@ enum States {
 }
 
 var states_debug_names = {
-	States.START: 'START',
-	States.PLAYING: 'PLAYING',
-	States.GAME_OVER: 'GAME_OVER',
-	States.PAUSED: 'PAUSED',
-	States.FINISHED: 'FINISHED',
-	States.EXIT: 'EXIT'
+	States.START: 'START (%s)' % States.START,
+	States.PLAYING: 'PLAYING (%s)' % States.PLAYING,
+	States.GAME_OVER: 'GAME_OVER (%s)' % States.GAME_OVER,
+	States.PAUSED: 'PAUSED (%s)' % States.PAUSED,
+	States.FINISHED: 'FINISHED (%s)' % States.FINISHED,
+	States.EXIT: 'EXIT (%s)' % States.EXIT
 }
 
 # Starting state for the game
@@ -89,10 +89,13 @@ func _input(event):
 				print("Current State: %s" % [states_debug_names[current_state]])
 				var next_states = ""
 				for state in possible_next_states[current_state].keys():
+					var str_state = states_debug_names[state]
 					if next_states == "":
-						next_states = "%s(%s)" % [states_debug_names[state], state]
+						next_states = str_state
 					else:
-						next_states = "%s, %s(%s)" % [next_states, states_debug_names[state], state]
+						next_states = "%s, %s" % [next_states, str_state]
 				print("Possible Next States: %s" % [next_states])
-				print("0 => START\n1 => PLAYING\n2 => GAME_OVER\n3 => PAUSED\n4 => FINISHED\n5 => EXIT")
+				print("\nEvery State:\n")
+				for state in states_debug_names.keys():
+					print('\t- %s' % states_debug_names[state])
 				print('===============================================================================')
