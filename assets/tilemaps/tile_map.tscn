@@ -1,16 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://brihf2al4i0d7"]
+[gd_scene load_steps=5 format=3 uid="uid://bd0otntfw0e1u"]
 
-[ext_resource type="Texture2D" uid="uid://dfsjf7dad1lis" path="res://assets/sprites/tattoo_tiles.png" id="1_wse65"]
-[ext_resource type="Script" path="res://scripts/TileMap.gd" id="2_vbte6"]
-[ext_resource type="Texture2D" uid="uid://beu7jwgu15pxx" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
-[ext_resource type="Texture2D" uid="uid://cfa0sa45r34ur" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
-[ext_resource type="Script" path="res://scripts/bar.gd" id="4_gu5of"]
-[ext_resource type="Texture2D" uid="uid://gv66b027y732" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
-[ext_resource type="Texture2D" uid="uid://b4h6xay1spf62" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
-[ext_resource type="Texture2D" uid="uid://g1chfe7wn73s" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
+[ext_resource type="Texture2D" uid="uid://d3g1f1yj675r8" path="res://assets/sprites/tattoo_tiles.png" id="1_jls1n"]
+[ext_resource type="Script" path="res://scripts/TileMap.gd" id="2_abhqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2nfot"]
-texture = ExtResource("1_wse65")
+texture = ExtResource("1_jls1n")
 texture_region_size = Vector2i(4, 4)
 0:0/0 = 0
 1:0/0 = 0
@@ -19,26 +13,9 @@ texture_region_size = Vector2i(4, 4)
 tile_size = Vector2i(4, 4)
 sources/0 = SubResource("TileSetAtlasSource_2nfot")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
-size = Vector2(20, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfq46"]
-size = Vector2(20, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqnd1"]
-size = Vector2(6, 31)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_buygm"]
-radius = 3.16228
-
-[node name="Gameplay" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-2, 0)
-
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap"]
 z_index = 1
-position = Vector2(-2, 0)
+position = Vector2(-289, 0)
 tile_set = SubResource("TileSet_43dk2")
 format = 2
 layer_0/name = "Background"
@@ -46,70 +23,4 @@ layer_0/tile_data = PackedInt32Array(1572963, 0, 0, 1507427, 0, 0, 1441890, 0, 0
 layer_1/name = "Tattoo"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array()
-script = ExtResource("2_vbte6")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -578.0
-offset_top = -324.0
-offset_right = 576.0
-offset_bottom = 320.0
-
-[node name="Culo" type="Sprite2D" parent="."]
-position = Vector2(285, -1.00001)
-scale = Vector2(5.2963, 5.03125)
-texture = ExtResource("3_u8y5e")
-
-[node name="Bar" type="Node2D" parent="."]
-position = Vector2(-440, 0)
-scale = Vector2(4, 4)
-script = ExtResource("4_gu5of")
-
-[node name="BaseBar" type="Sprite2D" parent="Bar"]
-unique_name_in_owner = true
-position = Vector2(-1.5, 0)
-texture = ExtResource("5_iwua7")
-
-[node name="Top" type="StaticBody2D" parent="Bar"]
-position = Vector2(0, 7.75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Top"]
-position = Vector2(0, -67)
-shape = SubResource("RectangleShape2D_7f02g")
-
-[node name="Botton" type="StaticBody2D" parent="Bar"]
-position = Vector2(-0.75, 7)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/Botton"]
-position = Vector2(0, 66)
-shape = SubResource("RectangleShape2D_lfq46")
-
-[node name="ZoneBar" type="StaticBody2D" parent="Bar"]
-unique_name_in_owner = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Bar/ZoneBar"]
-scale = Vector2(1, 0.3)
-texture = ExtResource("6_0mfk6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/ZoneBar"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_oqnd1")
-disabled = true
-
-[node name="PointBar" type="RigidBody2D" parent="Bar"]
-unique_name_in_owner = true
-gravity_scale = 0.3
-lock_rotation = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bar/PointBar"]
-shape = SubResource("CircleShape2D_buygm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Bar/PointBar"]
-scale = Vector2(2, 2)
-texture = ExtResource("7_ntnhp")
-centered = false
-offset = Vector2(0, -8.5)
-
-[node name="Cursor" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-texture = ExtResource("4_d262r")
-centered = false
+script = ExtResource("2_abhqv")

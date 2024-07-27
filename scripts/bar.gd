@@ -31,8 +31,8 @@ func _start_point_bar():
 
 func _process(_delta):
 	
-	var global_position = get_global_mouse_position()
-	cursor.position = global_position
+	var mouse_position = get_global_mouse_position()
+	cursor.position = mouse_position
 
 	if not GameManager.is_painting():
 		frames_since_last_direction_change+=1
