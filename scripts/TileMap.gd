@@ -23,7 +23,7 @@ func _input(_event):
 		
 		var coincidences = (coincidence(tile_map.get_used_cells(0), tile_map.get_used_cells(1)).size() * 100) / tile_map.get_used_cells(0).size()
 		
-		var differences = (difference(tile_map.get_used_cells(1), tile_map.get_used_cells(0)).size() * 100) / tile_map.get_used_cells(0).size()
+		var differences = ((difference(tile_map.get_used_cells(1), tile_map.get_used_cells(0)).size() * 100) / tile_map.get_used_cells(0).size()) * 0.25
 		
 		print("current score: ", coincidences - differences if coincidences - differences > 0 else 0, "%")
 		pass
