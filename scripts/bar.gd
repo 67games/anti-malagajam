@@ -21,8 +21,8 @@ func _ready():
 	pass
 
 func _process(_delta):
-	var global_position = get_global_mouse_position()
-	cursor.position = global_position
+	var mouse_position = get_global_mouse_position()
+	cursor.position = mouse_position
 	frames_since_last_direction_change+=1
 	if frames_since_last_direction_change > 60:
 		random_y = randi_range(-1, 1)
