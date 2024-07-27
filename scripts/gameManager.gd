@@ -2,6 +2,35 @@ extends Node
 
 @export var DEBUGGING_GAMESTATES = true
 
+var _is_painting = false
+var _start_painting_hooks = []
+var _stop_painting_hooks = []
+
+func is_painting():
+	return _is_painting
+
+func start_painting():
+	if _is_painting:
+		return
+
+	for f in _start_painting_hooks:
+		f.call()
+	_is_painting = true
+	
+func stop_painting():
+	if not _is_painting:
+		return
+
+	for f in _stop_painting_hooks:
+		f.call()
+	_is_painting = false
+	
+func on_start_painting(f):
+	_start_painting_hooks.push_back(f)
+	
+func on_stop_painting(f):
+	_stop_painting_hooks.push_back(f)
+
 # Possible Game States
 enum States {
 	# State of the game as it is starting
