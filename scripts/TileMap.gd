@@ -9,11 +9,14 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	pass
 
-
 func _input(event):
+	if Input.is_action_just_pressed("click"):
+		GameManager.start_painting()
 	
 	if Input.is_action_pressed("click"):
-		
+		if not GameManager.is_painting():
+			return
+
 		var tile_mouse_pos = tile_map.local_to_map(cursor.position)
 		
 		#Sustituir con las coordenadas correctas del tile del atlas
@@ -27,6 +30,9 @@ func _input(event):
 		
 		print("current score: ", coincidences - differences if coincidences - differences > 0 else 0, "%")
 		pass
+	
+	if Input.is_action_just_released("click"):
+		GameManager.stop_painting()
 		
 func coincidence(arr1, arr2):
 	var coincidences = []

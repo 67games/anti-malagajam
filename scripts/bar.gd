@@ -17,24 +17,36 @@ func _ready():
 	rand_from_seed(Time.get_ticks_msec())
 	Engine.max_fps = 60
 	
+	GameManager.on_start_painting(_stop_point_bar)
+	GameManager.on_stop_painting(_start_point_bar)
+	
 	initial_position_zone_bar_x = zone_bar.position.x
 	pass
 
+func _stop_point_bar():
+	point_bar.freeze = true
+	
+func _start_point_bar():
+	point_bar.freeze = false
+
 func _process(_delta):
+	
 	var global_position = get_global_mouse_position()
 	cursor.position = global_position
-	frames_since_last_direction_change+=1
-	if frames_since_last_direction_change > 60:
-		random_y = randi_range(-1, 1)
-		frames_since_last_direction_change = 0
-	if zone_bar.position.y <= -36.5:
-		random_y = 1
-	if zone_bar.position.y >= 51.5:
-		random_y = -1
-	zone_bar.position += Vector2(0, random_y*0.5)
-	
+
+	if not GameManager.is_painting():
+		frames_since_last_direction_change+=1
+		if frames_since_last_direction_change > 60:
+			random_y = randi_range(-1, 1)
+			frames_since_last_direction_change = 0
+		if zone_bar.position.y <= -36.5:
+			random_y = 1
+		if zone_bar.position.y >= 51.5:
+			random_y = -1
+		zone_bar.position += Vector2(0, random_y*0.5)
+
 	var distance = point_bar.position.distance_to(zone_bar.position)
-	
+		
 	if distance > 20:
 		# shake by distance
 		distance = abs(distance - 20)
