@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk0muf6twgu0k"]
+
+[ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
+[ext_resource type="Script" path="res://mainMenu.gd" id="1_wsofq"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wsofq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 3.0
+offset_right = 611.0
+offset_bottom = 647.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start tattooing" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5omei")
+theme_override_font_sizes/font_size = 32
+text = "Start tattooing!"
+alignment = 0
+
+[node name="Mute" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5omei")
+theme_override_font_sizes/font_size = 32
+text = "Mute"
+alignment = 0
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5omei")
+theme_override_font_sizes/font_size = 32
+text = "Credits
+"
+alignment = 0
+
+[node name="Quit the job" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5omei")
+theme_override_font_sizes/font_size = 32
+text = "Quit the job!"
+alignment = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start tattooing" to="." method="_on_start_tattooing_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit the job" to="." method="_on_quit_the_job_pressed"]
