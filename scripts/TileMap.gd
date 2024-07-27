@@ -1,22 +1,20 @@
 extends TileMap
 
 @onready var tile_map = $"."
+@onready var cursor = %Cursor
 
 var tattoo_layer = 1
 
-var MANO = load("res://assets/sprites/cut/mano.png")
-
 func _ready():
-	
-	# Changes only the arrow shape of the cursor.
-	# This is similar to changing it in the project settings.
-	Input.set_custom_mouse_cursor(MANO)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	pass
 
-func _input(_event):
+
+func _input(event):
 	
 	if Input.is_action_pressed("click"):
 		
-		var tile_mouse_pos = tile_map.local_to_map(get_global_mouse_position())
+		var tile_mouse_pos = tile_map.local_to_map(cursor.position)
 		
 		#Sustituir con las coordenadas correctas del tile del atlas
 		var atlas_cord = Vector2i(1,0)
@@ -28,6 +26,7 @@ func _input(_event):
 		var differences = (difference(tile_map.get_used_cells(1), tile_map.get_used_cells(0)).size() * 100) / tile_map.get_used_cells(0).size()
 		
 		print("current score: ", coincidences - differences if coincidences - differences > 0 else 0, "%")
+		pass
 		
 func coincidence(arr1, arr2):
 	var coincidences = []
