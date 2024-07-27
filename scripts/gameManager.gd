@@ -4,6 +4,7 @@ var DEBUGGING_GAMESTATES = true
 
 # Possible Game States
 enum States {
+	BOOTING,
 	START,
 	PLAYING,
 	GAME_OVER,
@@ -13,6 +14,7 @@ enum States {
 }
 
 var states_debug_names = {
+	States.BOOTING: 'BOOTING (%s)' % States.BOOTING,
 	States.START: 'START (%s)' % States.START,
 	States.PLAYING: 'PLAYING (%s)' % States.PLAYING,
 	States.GAME_OVER: 'GAME_OVER (%s)' % States.GAME_OVER,
@@ -22,10 +24,13 @@ var states_debug_names = {
 }
 
 # Starting state for the game
-var current_state = States.START
+var current_state = States.BOOTING
 
 # Dict saving unique possible next states
 var possible_next_states = {
+	States.BOOTING: {
+		States.START: _do_nothing
+	},
 	States.START: {
 		States.EXIT: _do_nothing,
 		States.PLAYING: _do_nothing
@@ -63,7 +68,7 @@ func change_state(new_state):
 	current_state = new_state
 
 func _ready():
-	# change_state(States.START)
+	change_state(States.START)
 	pass
 	
 func _process(delta):
@@ -73,17 +78,20 @@ func _input(event):
 	if DEBUGGING_GAMESTATES:
 		if event is InputEventKey and event.pressed:
 			if event.keycode == KEY_0:
-				change_state(States.START)
+				change_state(States.BOOTING)
 			if event.keycode == KEY_1:
-				change_state(States.PLAYING)
+				change_state(States.START)
 			if event.keycode == KEY_2:
-				change_state(States.GAME_OVER)
+				change_state(States.PLAYING)
 			if event.keycode == KEY_3:
-				change_state(States.PAUSED)
+				change_state(States.GAME_OVER)
 			if event.keycode == KEY_4:
-				change_state(States.FINISHED)
+				change_state(States.PAUSED)
 			if event.keycode == KEY_5:
+				change_state(States.FINISHED)
+			if event.keycode == KEY_6:
 				change_state(States.EXIT)
+				
 			if event.keycode == KEY_F1:
 				print('===============================================================================')
 				print("Current State: %s" % [states_debug_names[current_state]])

@@ -6,6 +6,7 @@
 
 ```mermaid
 flowchart TD
+	Booting --> Start
 	Start --> Game[Paint Tattoo]
 	Game --> Pause
 	Game --> Lost
