@@ -29,7 +29,7 @@ size = Vector2(6, 31)
 [sub_resource type="CircleShape2D" id="CircleShape2D_buygm"]
 radius = 3.16228
 
-[node name="Gameplay" type="Node2D"]
+[node name="Gameplay2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)

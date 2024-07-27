@@ -37,6 +37,8 @@ enum States {
 	BOOTING,
 	# Start Menu of the game
 	START,
+	# Loading sonme scene
+	LOADING,
 	# Playing some level
 	PLAYING,
 	# When the player failed the game
@@ -51,9 +53,12 @@ enum States {
 
 var current_state: States = States.BOOTING
 
+var previous_state: States
+
 var states_debug_names = {
 	States.BOOTING: 'BOOTING (%s)' % States.BOOTING,
 	States.START: 'START (%s)' % States.START,
+	States.LOADING: 'LOADING (%s)' % States.LOADING,
 	States.PLAYING: 'PLAYING (%s)' % States.PLAYING,
 	States.GAME_OVER: 'GAME_OVER (%s)' % States.GAME_OVER,
 	States.PAUSED: 'PAUSED (%s)' % States.PAUSED,
@@ -64,11 +69,15 @@ var states_debug_names = {
 # Dict saving unique possible next states
 var possible_next_states = {
 	States.BOOTING: {
-		States.START: _from_booting_to_start
+		States.LOADING: _from_booting_to_loading
 	},
 	States.START: {
 		States.EXIT: _exit,
-		States.PLAYING: _from_start_to_playing
+		States.LOADING: _from_start_to_loading
+	},
+	States.LOADING: {
+		States.START: _from_loading_to_start,
+		States.PLAYING: _from_loading_to_playing
 	},
 	States.PLAYING: {
 		States.FINISHED: _do_nothing,
@@ -77,25 +86,40 @@ var possible_next_states = {
 	},
 	States.GAME_OVER: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _exit
+		States.LOADING: _from_gameover_to_loading
 	},
 	States.FINISHED: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _exit
+		States.LOADING: _from_finished_to_loading
 	},
 	States.PAUSED: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _exit
+		States.LOADING: _from_paused_to_loading
 	},
 	States.EXIT: {}
 }
 
-func _from_booting_to_start():
+func _from_booting_to_loading():
+	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+
+func _from_start_to_loading():
+	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+	
+func _from_gameover_to_loading():
+	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+
+func _from_finished_to_loading():
+	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+	
+func _from_paused_to_loading():
+	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+	
+func _from_loading_to_start():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-
-func _from_start_to_playing():
-	get_tree().change_scene_to_file("res://scenes/gameplay.tscn")
-
+	
+func _from_loading_to_playing():
+	get_tree().change_scene_to_file("res://scenes/gameplay1.tscn")
+	
 func _exit():
 	print_debug('Exiting game')
 	get_tree().quit()
@@ -109,12 +133,16 @@ func change_state(new_state):
 	print_debug("change_state from %s to %s" % [states_debug_names[current_state], states_debug_names[new_state]])
 	assert(new_state in possible_next_states[current_state], 'Game state change was ilegal')
 	possible_next_states[current_state][new_state].call()
+	previous_state = current_state
 	current_state = new_state
 
 func _ready():
 	# print(get_tree().get_current_scene().name)
 	if get_tree().get_current_scene().name == 'MainGame':
-		change_state(States.START)
+		change_state(States.LOADING)
+	# if get_tree().get_current_scene().name == 'Loading':
+		# await get_tree().create_timer(4.0).timeout
+		# change_state(States.START)
 	
 func _process(delta):
 	pass

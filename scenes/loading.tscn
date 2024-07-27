@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://0f0n2hxwcyi"]
+
+[ext_resource type="Script" path="res://scenes/loading.gd" id="1_17pgn"]
+[ext_resource type="Texture2D" uid="uid://dpu82ktkf0f2e" path="res://assets/background/beforetattoo1.png" id="1_ccoqx"]
+[ext_resource type="Texture2D" uid="uid://ddcxuhqc2w1vm" path="res://assets/background/beforetattoo2.png" id="2_1l5g3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aw721"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ccoqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1l5g3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17pgn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_aw721")
+autoplay = "default"
+frame_progress = 0.590992
+centered = false

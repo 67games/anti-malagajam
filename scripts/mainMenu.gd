@@ -3,7 +3,7 @@ extends Control
 @onready var mute_button = $MarginContainer/VBoxContainer/Mute
 
 func _on_start_tattooing_pressed():
-	GameManager.change_state(GameManager.States.PLAYING)
+	GameManager.change_state(GameManager.States.LOADING)
 
 func _on_mute_pressed():
 	if mute_button.text == "Mute":
