@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk0muf6twgu0k"]
+[gd_scene load_steps=4 format=3 uid="uid://bk0muf6twgu0k"]
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
-[ext_resource type="Script" path="res://mainMenu.gd" id="1_wsofq"]
+[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
+[ext_resource type="Texture2D" uid="uid://cysrm7qd8n3n" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -51,6 +52,11 @@ theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
 text = "Quit the job!"
 alignment = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(876, 351)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("3_2b4vf")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start tattooing" to="." method="_on_start_tattooing_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
