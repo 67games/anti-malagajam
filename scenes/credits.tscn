@@ -170,8 +170,8 @@ Alba Morales
 Diego Cortón
 
 
-Mini square mono font and input 
-prompts by: KenneyNL"
+Fuente Mini square mono e iconos 
+de teclas: KenneyNL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -187,7 +187,7 @@ offset_right = 155.0
 offset_bottom = -254.0
 theme_override_fonts/font = ExtResource("4_cld6u")
 theme_override_font_sizes/font_size = 20
-text = "A GAME BY 67GAMES"
+text = "UN JUEGO DE 67GAMES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -211,6 +211,6 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_cld6u")
 theme_override_font_sizes/font_size = 32
-text = "Back to menu"
+text = "Volver al menú"
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Back to menu" to="." method="_on_back_to_menu_pressed"]
