@@ -33,7 +33,6 @@ radius = 3.16228
 
 [node name="Gameplay" type="Node2D"]
 
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-2, 0)
 
@@ -294,5 +293,7 @@ offset_bottom = -238.0
 theme_override_fonts/font = ExtResource("16_fyjap")
 theme_override_font_sizes/font_size = 72
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
