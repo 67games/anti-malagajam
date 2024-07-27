@@ -1,6 +1,6 @@
 extends Node
 
-var DEBUGGING_GAMESTATES = true
+@export var DEBUGGING_GAMESTATES = true
 
 # Possible Game States
 enum States {
@@ -13,6 +13,8 @@ enum States {
 	EXIT
 }
 
+var current_state: States = States.BOOTING
+
 var states_debug_names = {
 	States.BOOTING: 'BOOTING (%s)' % States.BOOTING,
 	States.START: 'START (%s)' % States.START,
@@ -23,17 +25,14 @@ var states_debug_names = {
 	States.EXIT: 'EXIT (%s)' % States.EXIT
 }
 
-# Starting state for the game
-var current_state = States.BOOTING
-
 # Dict saving unique possible next states
 var possible_next_states = {
 	States.BOOTING: {
-		States.START: _do_nothing
+		States.START: _from_booting_to_start
 	},
 	States.START: {
-		States.EXIT: _do_nothing,
-		States.PLAYING: _do_nothing
+		States.EXIT: _exit,
+		States.PLAYING: _from_start_to_playing
 	},
 	States.PLAYING: {
 		States.FINISHED: _do_nothing,
@@ -42,18 +41,28 @@ var possible_next_states = {
 	},
 	States.GAME_OVER: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _do_nothing
+		States.EXIT: _exit
 	},
 	States.FINISHED: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _do_nothing
+		States.EXIT: _exit
 	},
 	States.PAUSED: {
 		States.PLAYING: _do_nothing,
-		States.EXIT: _do_nothing
+		States.EXIT: _exit
 	},
 	States.EXIT: {}
 }
+
+func _from_booting_to_start():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+func _from_start_to_playing():
+	get_tree().change_scene_to_file("res://scenes/gameplay.tscn")
+
+func _exit():
+	print_debug('Exiting game')
+	get_tree().quit()
 
 # Temporal function for game state changes that do nothing
 func _do_nothing():
@@ -64,12 +73,15 @@ func change_state(new_state):
 	print_debug("change_state from %s to %s" % [states_debug_names[current_state], states_debug_names[new_state]])
 	assert(new_state in possible_next_states[current_state], 'Game state change was ilegal')
 	possible_next_states[current_state][new_state].call()
-
+	print("Current State %s" % current_state)
+	
 	current_state = new_state
+	print("Current State %s" % current_state)
 
 func _ready():
-	change_state(States.START)
-	pass
+	# print(get_tree().get_current_scene().name)
+	if get_tree().get_current_scene().name == 'MainGame':
+		change_state(States.START)
 	
 func _process(delta):
 	pass

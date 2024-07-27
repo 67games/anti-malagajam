@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3rwsdru2j51e"]
+[gd_scene load_steps=15 format=3 uid="uid://brihf2al4i0d7"]
 
-[ext_resource type="Texture2D" uid="uid://d3g1f1yj675r8" path="res://assets/sprites/tattoo_tiles.png" id="1_wse65"]
+[ext_resource type="Texture2D" uid="uid://dfsjf7dad1lis" path="res://assets/sprites/tattoo_tiles.png" id="1_wse65"]
 [ext_resource type="Script" path="res://scripts/TileMap.gd" id="2_vbte6"]
-[ext_resource type="Texture2D" uid="uid://mjt63md07o1c" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
-[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
-[ext_resource type="Script" path="res://scripts/Bar.gd" id="4_gu5of"]
-[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
-[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
-[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
+[ext_resource type="Texture2D" uid="uid://beu7jwgu15pxx" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
+[ext_resource type="Texture2D" uid="uid://cfa0sa45r34ur" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
+[ext_resource type="Script" path="res://scripts/bar.gd" id="4_gu5of"]
+[ext_resource type="Texture2D" uid="uid://gv66b027y732" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
+[ext_resource type="Texture2D" uid="uid://b4h6xay1spf62" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
+[ext_resource type="Texture2D" uid="uid://g1chfe7wn73s" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2nfot"]
 texture = ExtResource("1_wse65")
