@@ -9,6 +9,7 @@ var IMPULSE_FORCE = 125
 var frames_since_last_direction_change = 0
 var number_of_lives = 5 * 60 # Five seconds out of the zone
 var random_y = randi_range(-1, 2)
+var initial_position_zone_bar_x
 
 # var should_point_fall = true
 
@@ -18,6 +19,7 @@ func _ready():
 	Engine.max_fps = 60
 	point_bar.max_contacts_reported = 3
 	point_bar.contact_monitor = true
+	initial_position_zone_bar_x = zone_bar.position.x
 	pass # Replace with function body.
 
 
@@ -36,8 +38,11 @@ func _process(delta):
 	var distance = point_bar.position.distance_to(zone_bar.position)
 	
 	if distance > 20:
-		number_of_lives -= 1
-		print(number_of_lives)
+		# shake by distance
+		distance = abs(distance - 20)
+		var shake = distance * 0.1
+		zone_bar.position.x = initial_position_zone_bar_x + [-1, 1][randi_range(0,1)] * shake
+		
 	
 	# if should_point_fall:
 	# 	point_bar.position += Vector2(0, 1)
