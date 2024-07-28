@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/select_client.gd" id="1_765lx"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_npahv"]
-[ext_resource type="Texture2D" uid="uid://djg21f6qlvqcu" path="res://assets/background/backgroundstudio.png" id="2_fkt7c"]
-[ext_resource type="Texture2D" uid="uid://cuawsytov0wbv" path="res://assets/sprites/characters/taylor.png" id="2_osrp2"]
-[ext_resource type="Texture2D" uid="uid://lwiege63fscc" path="res://assets/sprites/characters/willsmith.png" id="3_7ybs3"]
-[ext_resource type="Texture2D" uid="uid://t8iv3wwf7gb4" path="res://assets/sprites/characters/hannahmontana.png" id="4_nj33q"]
+[ext_resource type="Texture2D" uid="uid://c1w15j5cq0fx0" path="res://assets/background/backgroundstudio.png" id="2_fkt7c"]
+[ext_resource type="Texture2D" uid="uid://dvbk55kwwaqnj" path="res://assets/sprites/characters/taylor.png" id="2_osrp2"]
+[ext_resource type="Texture2D" uid="uid://tba8vigigf71" path="res://assets/sprites/characters/willsmith.png" id="3_7ybs3"]
+[ext_resource type="Texture2D" uid="uid://uwwo1bs52dfv" path="res://assets/sprites/characters/hannahmontana.png" id="4_nj33q"]
 
 [node name="SelectClient" type="Control"]
 layout_mode = 3
