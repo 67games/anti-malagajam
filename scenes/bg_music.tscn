@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scripts/bg_music.gd" id="2_k71yd"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_jac8h")
 script = ExtResource("2_k71yd")
 

@@ -2,9 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
-[ext_resource type="Texture2D" uid="uid://cdgmc2183y3f1" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
-[ext_resource type="Texture2D" uid="uid://bebd5qqcl4yf8" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
-
+[ext_resource type="Texture2D" uid="uid://blqr3sghsyrw0" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
+[ext_resource type="Texture2D" uid="uid://btye8h284fitw" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
