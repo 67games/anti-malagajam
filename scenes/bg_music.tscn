@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://r4phtfplvoik"]
+
+[ext_resource type="AudioStream" uid="uid://pkmgnol7yxxm" path="res://assets/music/JAM SONG.mp3" id="1_jac8h"]
+[ext_resource type="Script" path="res://scripts/bg_music.gd" id="2_k71yd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_jac8h")
+script = ExtResource("2_k71yd")
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_jac8h")
