@@ -14,6 +14,8 @@ var level_timer: Timer
 var machine_sound = preload("res://assets/sounds/machine.mp3")
 
 func _ready():
+	GameManager.on_start_painting(_start_playing_sound)
+	GameManager.on_stop_painting(_stop_playing_sound)
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	level_timer = Timer.new()
 	add_child(level_timer)
@@ -28,6 +30,19 @@ func _process(_delta):
 		GameManager.change_state(GameManager.States.FINISHED)
 		print(GameManager.score_by_level)
 
+func _on_loop_sound(player):
+	player.play()
+
+func _start_playing_sound():
+	if !audio_stream_player_2d.is_playing():
+		audio_stream_player_2d.stream = machine_sound
+		audio_stream_player_2d.connect("finished", Callable(self,"_on_loop_sound").bind(audio_stream_player_2d))
+		audio_stream_player_2d.play()
+
+func _stop_playing_sound():
+	if audio_stream_player_2d.is_playing():
+		audio_stream_player_2d.stop()
+
 func _input(_event):
 	
 	if Input.is_action_just_pressed("click"):
@@ -36,10 +51,6 @@ func _input(_event):
 	if Input.is_action_pressed("click"):
 		if not GameManager.is_painting():
 			return
-			
-		if !audio_stream_player_2d.is_playing():
-			audio_stream_player_2d.stream = machine_sound
-			audio_stream_player_2d.play()
 
 		var tile_mouse_pos = tile_map.local_to_map(cursor.position)
 		
@@ -59,9 +70,7 @@ func _input(_event):
 	
 	if Input.is_action_just_released("click"):
 		GameManager.stop_painting()
-		if audio_stream_player_2d.is_playing():
-			audio_stream_player_2d.stop()
-		
+
 func coincidence(arr1, arr2):
 	var coincidences = []
 	for v in arr1:
