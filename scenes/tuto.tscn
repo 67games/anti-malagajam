@@ -1,0 +1,264 @@
+[gd_scene load_steps=14 format=3 uid="uid://bno56782w6g7d"]
+
+[ext_resource type="Texture2D" uid="uid://vfaewquhpybf" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_30hml"]
+[ext_resource type="Texture2D" uid="uid://gjewvqe443mu" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_asgeu"]
+[ext_resource type="Texture2D" uid="uid://dqk70ysfl3xkg" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_ocjtj"]
+[ext_resource type="Texture2D" uid="uid://ddvjnujgjccl3" path="res://assets/sprites/bar/barsquare.png" id="4_r8gm7"]
+[ext_resource type="Texture2D" uid="uid://do2bs25wsmtb4" path="res://assets/sprites/gameplay_background/camilla.png" id="4_yqgqp"]
+[ext_resource type="Texture2D" uid="uid://cb1kp55wk6sp2" path="res://assets/sprites/booties/culoblancoynegro.png" id="5_yadsf"]
+[ext_resource type="Texture2D" uid="uid://0eoufk1ghhf2" path="res://assets/sprites/bar/barv2.png" id="6_agada"]
+[ext_resource type="Texture2D" uid="uid://bi3ukcrtvlno1" path="res://assets/sprites/bar/barindicator.png" id="7_msg5n"]
+[ext_resource type="Texture2D" uid="uid://cesexj0qsllww" path="res://assets/sprites/flowers/mano.png" id="8_vj212"]
+[ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="9_r5cab"]
+[ext_resource type="Texture2D" uid="uid://cnron7i8clvce" path="res://assets/sprites/cut/mano.png" id="10_vios6"]
+[ext_resource type="Texture2D" uid="uid://bkapon8shdi7a" path="res://assets/icons/keyboard_space.png" id="12_i8wro"]
+[ext_resource type="Texture2D" uid="uid://c2406xpih07qc" path="res://assets/icons/mouse_left.png" id="13_a4eca"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -26.0
+offset_top = -34.0
+offset_right = 1178.0
+offset_bottom = 743.0
+color = Color(0.617455, 0.617455, 0.617455, 1)
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(393, 130)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(-39, 130)
+scale = Vector2(4, 4)
+texture = ExtResource("2_asgeu")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(177, 6)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(177, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(-39, 378)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(-471, 378)
+scale = Vector2(4, 4)
+texture = ExtResource("2_asgeu")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(-255, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(-255, 502)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+position = Vector2(609, 502)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+position = Vector2(177, 502)
+scale = Vector2(4, 4)
+texture = ExtResource("2_asgeu")
+
+[node name="Sprite2D16" type="Sprite2D" parent="."]
+position = Vector2(393, 378)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D17" type="Sprite2D" parent="."]
+position = Vector2(393, 626)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D18" type="Sprite2D" parent="."]
+position = Vector2(-39, 626)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D19" type="Sprite2D" parent="."]
+position = Vector2(1257, 130)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D20" type="Sprite2D" parent="."]
+position = Vector2(825, 130)
+scale = Vector2(4, 4)
+texture = ExtResource("2_asgeu")
+
+[node name="Sprite2D21" type="Sprite2D" parent="."]
+position = Vector2(1041, 6)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D22" type="Sprite2D" parent="."]
+position = Vector2(1041, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D23" type="Sprite2D" parent="."]
+position = Vector2(825, 378)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D24" type="Sprite2D" parent="."]
+position = Vector2(1473, 502)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D25" type="Sprite2D" parent="."]
+position = Vector2(1041, 502)
+scale = Vector2(4, 4)
+texture = ExtResource("2_asgeu")
+
+[node name="Sprite2D26" type="Sprite2D" parent="."]
+position = Vector2(1257, 378)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D27" type="Sprite2D" parent="."]
+position = Vector2(1257, 626)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D28" type="Sprite2D" parent="."]
+position = Vector2(825, 626)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D29" type="Sprite2D" parent="."]
+position = Vector2(609, 6)
+scale = Vector2(4, 4)
+texture = ExtResource("1_30hml")
+
+[node name="Sprite2D30" type="Sprite2D" parent="."]
+position = Vector2(609, 254)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ocjtj")
+
+[node name="Sprite2D35" type="Sprite2D" parent="."]
+position = Vector2(859, 320)
+scale = Vector2(5.2, 5.2)
+texture = ExtResource("4_yqgqp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(687, 520)
+scale = Vector2(5.2, 0.888)
+texture = ExtResource("4_r8gm7")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(123, 252)
+scale = Vector2(5.2, 0.888)
+texture = ExtResource("4_r8gm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(849, 325)
+scale = Vector2(5.2, 5.2)
+texture = ExtResource("5_yadsf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(117, 321)
+scale = Vector2(4, 4)
+texture = ExtResource("6_agada")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(160, 255)
+scale = Vector2(4, 4)
+texture = ExtResource("7_msg5n")
+
+[node name="Sprite2D31" type="Sprite2D" parent="."]
+position = Vector2(908, 308)
+scale = Vector2(6, 6)
+texture = ExtResource("8_vj212")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 204.0
+offset_top = 157.0
+offset_right = 652.0
+offset_bottom = 345.0
+color = Color(1, 1, 1, 0.647059)
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 216.0
+offset_top = 173.0
+offset_right = 1297.0
+offset_bottom = 760.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_r5cab")
+theme_override_font_sizes/font_size = 32
+text = "pulsa     para
+situar la aguja
+en la zona verde y 
+mantener el pulso"
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 455.0
+offset_top = 386.0
+offset_right = 967.0
+offset_bottom = 493.0
+color = Color(1, 1, 1, 0.647059)
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 76.0
+offset_top = 418.0
+offset_right = 964.0
+offset_bottom = 1005.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_r5cab")
+theme_override_font_sizes/font_size = 32
+text = "Mantén    para tatuar
+"
+horizontal_alignment = 2
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 244.0
+offset_top = 545.0
+offset_right = 903.0
+offset_bottom = 625.0
+color = Color(1, 1, 1, 0.647059)
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -26.0
+offset_top = 542.0
+offset_right = 1174.0
+offset_bottom = 1129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_r5cab")
+theme_override_font_sizes/font_size = 32
+text = "Sigue el calco para obtener
+una buena puntuación!
+"
+horizontal_alignment = 1
+
+[node name="Sprite2D32" type="Sprite2D" parent="."]
+position = Vector2(1074, 522)
+scale = Vector2(5, 5)
+texture = ExtResource("10_vios6")
+
+[node name="Sprite2D33" type="Sprite2D" parent="."]
+position = Vector2(392, 191)
+texture = ExtResource("12_i8wro")
+
+[node name="Sprite2D34" type="Sprite2D" parent="."]
+position = Vector2(651, 435)
+texture = ExtResource("13_a4eca")
+
+[node name="BackToMenu" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 12.0
+offset_right = 1119.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("9_r5cab")
+text = "Volver al Menú principal"

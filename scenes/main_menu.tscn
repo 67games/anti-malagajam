@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
-[ext_resource type="Texture2D" uid="uid://cdgmc2183y3f1" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
-[ext_resource type="Texture2D" uid="uid://bebd5qqcl4yf8" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
+[ext_resource type="Texture2D" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -22,17 +22,17 @@ texture = ExtResource("2_ru3ww")
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 208.0
+offset_top = 182.0
 offset_right = 626.0
-offset_bottom = 441.0
+offset_bottom = 471.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 216.0
+offset_top = 190.0
 offset_right = 618.0
-offset_bottom = 433.0
+offset_bottom = 461.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -50,6 +50,13 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
 text = "Empezar a tatuar!"
+alignment = 0
+
+[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_5omei")
+theme_override_font_sizes/font_size = 32
+text = "TUTORIAL"
 alignment = 0
 
 [node name="Mute" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -80,6 +87,7 @@ scale = Vector2(2.2, 2.2)
 texture = ExtResource("4_6p5nx")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start tattooing" to="." method="_on_start_tattooing_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit the job" to="." method="_on_quit_the_job_pressed"]
