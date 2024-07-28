@@ -45,7 +45,7 @@ func _stop_playing_sound():
 
 func _input(_event):
 	
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click") and not GameManager.paused:
 		GameManager.start_painting()
 	
 	if Input.is_action_pressed("click"):

@@ -37,7 +37,7 @@ func stop_painting():
 
 func _clean_painting_hooks():
 	_start_painting_hooks = []
-	_stop_painting_hooks = [ ]
+	_stop_painting_hooks =  []
 
 func on_start_painting(f):
 	_start_painting_hooks.push_back(f)
