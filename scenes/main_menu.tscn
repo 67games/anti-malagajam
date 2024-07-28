@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbkgvw8xo2bh"]
+[gd_scene load_steps=5 format=3 uid="uid://cbkgvw8xo2bh"]
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
-[ext_resource type="Texture2D" uid="uid://n8y4yid5fdng" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
+[ext_resource type="Texture2D" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
+[ext_resource type="Texture2D" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,6 +13,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wsofq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(559, 322)
+scale = Vector2(5.2, 5.2)
+texture = ExtResource("2_ru3ww")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 208.0
+offset_right = 626.0
+offset_bottom = 441.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 216.0
+offset_right = 618.0
+offset_bottom = 433.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -54,9 +75,9 @@ text = "Dejar el curro!"
 alignment = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(876, 351)
+position = Vector2(907, 378)
 scale = Vector2(2.2, 2.2)
-texture = ExtResource("3_2b4vf")
+texture = ExtResource("4_6p5nx")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start tattooing" to="." method="_on_start_tattooing_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
