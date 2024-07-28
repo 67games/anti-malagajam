@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cv4ka6uu2ddt3"]
 
 [ext_resource type="Script" path="res://scripts/client_1.gd" id="1_cbvcf"]
-[ext_resource type="Texture2D" uid="uid://d1sshqvv63603" path="res://assets/background/tattoo studio.png" id="2_nbig4"]
-[ext_resource type="Texture2D" uid="uid://dl14qb15ccc0o" path="res://assets/sprites/characters/taylor.png" id="3_6kuyl"]
+[ext_resource type="Texture2D" uid="uid://bl4i86kwuxydq" path="res://assets/background/tattoo studio.png" id="2_nbig4"]
+[ext_resource type="Texture2D" uid="uid://dvbk55kwwaqnj" path="res://assets/sprites/characters/taylor.png" id="3_6kuyl"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="4_rxhoy"]
 
 [node name="Client1" type="Control"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bskb4mawxblwb"]
+[gd_scene load_steps=3 format=3 uid="uid://b4wns5chgbick"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_dbod3"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_vigqt"]

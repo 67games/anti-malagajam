@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cto63fvk36nip"]
 
-[ext_resource type="Texture2D" uid="uid://bvs8k7ekixwls" path="res://assets/introscreen/jardintrasero1.png" id="1_e712s"]
+[ext_resource type="Texture2D" uid="uid://dvbnokphj8dj1" path="res://assets/introscreen/jardintrasero1.png" id="1_e712s"]
 [ext_resource type="Script" path="res://scripts/initial_scene.gd" id="1_ursui"]
-[ext_resource type="Texture2D" uid="uid://xkli6uu6nfdj" path="res://assets/introscreen/jardintrasero2.png" id="2_b8hp6"]
-[ext_resource type="Texture2D" uid="uid://j6lgic1bqi16" path="res://assets/sprites/logo67games.png" id="4_yudny"]
-[ext_resource type="AudioStream" uid="uid://bsqnmka1btr63" path="res://assets/music/INTRO.mp3" id="5_5qjoy"]
+[ext_resource type="Texture2D" uid="uid://dl61au866syig" path="res://assets/introscreen/jardintrasero2.png" id="2_b8hp6"]
+[ext_resource type="Texture2D" uid="uid://doubovnqq651q" path="res://assets/sprites/logo67games.png" id="4_yudny"]
+[ext_resource type="AudioStream" uid="uid://d5nkts2ly3su" path="res://assets/music/INTRO.mp3" id="5_5qjoy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uc65o"]
 animations = [{
