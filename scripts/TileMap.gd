@@ -26,7 +26,7 @@ func _process(_delta):
 	level_timer_label.text = "%01d" % level_timer.time_left
 	
 	if level_timer.time_left < 1.0:
-		GameManager.score_by_level[level] = score
+		GameManager.score_by_level['%s' % level] = score
 		GameManager.change_state(GameManager.States.FINISHED)
 		print(GameManager.score_by_level)
 

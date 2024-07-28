@@ -7,9 +7,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	client_one.text = "%01d %%" % GameManager.score_by_level[1] 
-	client_two.text = "%01d %%" % GameManager.score_by_level[2] 
-	client_three.text = "%01d %%" % GameManager.score_by_level[3] 
+	client_one.text = "%01d %%" % GameManager.score_by_level['1'] 
+	client_two.text = "%01d %%" % GameManager.score_by_level['2'] 
+	client_three.text = "%01d %%" % GameManager.score_by_level['3'] 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

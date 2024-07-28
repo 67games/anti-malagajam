@@ -8,9 +8,9 @@ var _stop_painting_hooks = []
 var paused = false
 
 var score_by_level = {
-	1: 0,
-	2: 0,
-	3: 0
+	'1': 0,
+	'2': 0,
+	'3': 0
 }
 
 var selected_level = "res://scenes/gameplay1.tscn"
@@ -192,6 +192,7 @@ func _do_nothing():
 
 # Change State executing required functions
 func change_state(new_state):
+	save_scores()
 	stop_painting()
 	_clean_painting_hooks()
 	print_debug("change_state from %s to %s" % [states_debug_names[current_state], states_debug_names[new_state]])
@@ -200,9 +201,29 @@ func change_state(new_state):
 	previous_state = current_state
 	current_state = new_state
 
+func save_scores():
+	var save_file = FileAccess.open("user://gamescores.save", FileAccess.WRITE)
+	var json_string = JSON.stringify(score_by_level)
+	save_file.store_line(json_string)
+	
+func load_scores():
+	if not FileAccess.file_exists("user://gamescores.save"):
+		return # Error! We don't have a save to load.
+	var save_file = FileAccess.open("user://gamescores.save", FileAccess.READ)
+	score_by_level = JSON.parse_string(save_file.get_as_text())
+	print_debug(save_file.get_as_text())
+	print_debug(score_by_level)
+	
+	print("LOADED LEVELS:\n\t1 => %s\n\t2 => %s\n\t3 => %s" % [
+		score_by_level['1'],
+		score_by_level['2'],
+		score_by_level['3']
+	])
+
 func _ready():
 	# print(get_tree().get_current_scene().name)
 	if get_tree().get_current_scene().name == 'MainGame':
+		load_scores()
 		change_state(States.INTRO_SCREEN)
 	# if get_tree().get_current_scene().name == 'Loading':
 		# await get_tree().create_timer(4.0).timeout
