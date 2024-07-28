@@ -10,7 +10,6 @@ func _ready():
 		next_state = GameManager.States.START
 	
 	await get_tree().create_timer(randi_range(1,3)).timeout
-	print("DEBUG")
 	GameManager.change_state(next_state)
 	pass # Replace with function body.
 

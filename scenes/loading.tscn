@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://0f0n2hxwcyi"]
+[gd_scene load_steps=5 format=3 uid="uid://br8c0es6d5ijw"]
 
 [ext_resource type="Script" path="res://scripts/loading.gd" id="1_17pgn"]
-[ext_resource type="Texture2D" uid="uid://dpu82ktkf0f2e" path="res://assets/background/beforetattoo1.png" id="1_ccoqx"]
-[ext_resource type="Texture2D" uid="uid://ddcxuhqc2w1vm" path="res://assets/background/beforetattoo2.png" id="2_1l5g3"]
+[ext_resource type="Texture2D" uid="uid://dx7k0e7r2631e" path="res://assets/background/beforetattoo1.png" id="1_ccoqx"]
+[ext_resource type="Texture2D" uid="uid://ctqbnhoihtgql" path="res://assets/background/beforetattoo2.png" id="2_1l5g3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_aw721"]
 animations = [{

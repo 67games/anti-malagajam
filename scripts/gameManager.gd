@@ -162,6 +162,7 @@ func _from_finished_to_loading():
 	get_tree().change_scene_to_file("res://scenes/loading.tscn")
 	
 func _from_paused_to_loading():
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/loading.tscn")
 	
 func _from_loading_to_start():

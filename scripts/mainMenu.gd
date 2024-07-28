@@ -15,12 +15,8 @@ func _on_mute_pressed():
 		var bus_idx = AudioServer.get_bus_index("Master")
 		AudioServer.set_bus_mute(bus_idx, false) # or false
 
-
-
 func _on_credits_pressed():
 	GameManager.change_state(GameManager.States.CREDITS)
-
-
 
 func _on_quit_the_job_pressed():
 	GameManager.change_state(GameManager.States.EXIT)
