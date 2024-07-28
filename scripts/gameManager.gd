@@ -34,7 +34,11 @@ func stop_painting():
 	for f in _stop_painting_hooks:
 		f.call()
 	_is_painting = false
-	
+
+func _clean_painting_hooks():
+	_start_painting_hooks = []
+	_stop_painting_hooks = [ ]
+
 func on_start_painting(f):
 	_start_painting_hooks.push_back(f)
 	
@@ -188,6 +192,8 @@ func _do_nothing():
 
 # Change State executing required functions
 func change_state(new_state):
+	stop_painting()
+	_clean_painting_hooks()
 	print_debug("change_state from %s to %s" % [states_debug_names[current_state], states_debug_names[new_state]])
 	assert(new_state in possible_next_states[current_state], 'Game state change was ilegal')
 	possible_next_states[current_state][new_state].call()
