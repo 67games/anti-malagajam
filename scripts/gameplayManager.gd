@@ -9,7 +9,7 @@ func _ready():
 	get_tree().paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	if label != null:
 		label.text = "%01d" % timer.time_left

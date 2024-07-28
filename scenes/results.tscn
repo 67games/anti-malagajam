@@ -1,0 +1,214 @@
+[gd_scene load_steps=6 format=3 uid="uid://03wnm5fhbgqc"]
+
+[ext_resource type="Script" path="res://scripts/results.gd" id="1_vi5vl"]
+[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_x61e2"]
+[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_gp2fb"]
+[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_uv4cv"]
+[ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="5_hjlnh"]
+
+[node name="Results" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vi5vl")
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(600, 310)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background"]
+position = Vector2(-171, -138)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background"]
+position = Vector2(-603, -138)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background"]
+position = Vector2(-387, -262)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background"]
+position = Vector2(-387, -14)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background"]
+position = Vector2(-603, 110)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Background"]
+position = Vector2(-1035, 110)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Background"]
+position = Vector2(-819, -14)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Background"]
+position = Vector2(-819, 234)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Background"]
+position = Vector2(45, 234)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Background"]
+position = Vector2(-387, 234)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Background"]
+position = Vector2(-171, 110)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Background"]
+position = Vector2(-171, 358)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Background"]
+position = Vector2(-603, 358)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Background"]
+position = Vector2(693, -138)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Background"]
+position = Vector2(261, -138)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Background"]
+position = Vector2(477, -262)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Background"]
+position = Vector2(477, -14)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Background"]
+position = Vector2(261, 110)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Background"]
+position = Vector2(909, 234)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Background"]
+position = Vector2(477, 234)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Background"]
+position = Vector2(693, 110)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Background"]
+position = Vector2(693, 358)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Background"]
+position = Vector2(261, 358)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Background"]
+position = Vector2(45, -262)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Background"]
+position = Vector2(45, -14)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Background"]
+position = Vector2(-601, -386)
+scale = Vector2(4, 4)
+texture = ExtResource("3_uv4cv")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Background"]
+position = Vector2(263, -386)
+scale = Vector2(4, 4)
+texture = ExtResource("1_x61e2")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Background"]
+position = Vector2(-169, -386)
+scale = Vector2(4, 4)
+texture = ExtResource("2_gp2fb")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ClientOne" type="Label" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "Tatuaje del primer cliente:"
+
+[node name="ClientTwo" type="Label" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "Tatuaje del segundo cliente:"
+
+[node name="ClientThree" type="Label" parent="HSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "Tatuaje del tercer cliente:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ClientOne" type="Label" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "0 %"
+
+[node name="ClientTwo" type="Label" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "0 %"
+
+[node name="ClientThree" type="Label" parent="HSplitContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "0 %"

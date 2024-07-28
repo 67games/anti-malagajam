@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://0f0n2hxwcyi"]
 
-[ext_resource type="Script" path="res://scenes/loading.gd" id="1_17pgn"]
+[ext_resource type="Script" path="res://scripts/loading.gd" id="1_17pgn"]
 [ext_resource type="Texture2D" uid="uid://dpu82ktkf0f2e" path="res://assets/background/beforetattoo1.png" id="1_ccoqx"]
 [ext_resource type="Texture2D" uid="uid://ddcxuhqc2w1vm" path="res://assets/background/beforetattoo2.png" id="2_1l5g3"]
 
@@ -31,5 +31,5 @@ script = ExtResource("1_17pgn")
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_aw721")
 autoplay = "default"
-frame_progress = 0.590992
+frame_progress = 0.0831982
 centered = false

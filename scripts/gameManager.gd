@@ -5,6 +5,16 @@ extends Node
 var _is_painting = false
 var _start_painting_hooks = []
 var _stop_painting_hooks = []
+var paused = false
+
+var score_by_level = {
+	1: 0,
+	2: 0,
+	3: 0
+}
+
+var selected_level = "res://scenes/gameplay1.tscn"
+var selected_level_reading = "res://scenes/client_1.tscn"
 
 func is_painting():
 	return _is_painting
@@ -39,6 +49,10 @@ enum States {
 	START,
 	# Loading sonme scene
 	LOADING,
+	# Selecting some level
+	SELECTING_LEVEL,
+	# Reading some lore
+	READING,
 	# Playing some level
 	PLAYING,
 	# When the player failed the game
@@ -61,6 +75,8 @@ var states_debug_names = {
 	States.BOOTING: 'BOOTING (%s)' % States.BOOTING,
 	States.START: 'START (%s)' % States.START,
 	States.LOADING: 'LOADING (%s)' % States.LOADING,
+	States.SELECTING_LEVEL: 'SELECTING_LEVEL (%s)' % States.SELECTING_LEVEL,
+	States.READING: 'READING (%s)' % States.READING,
 	States.PLAYING: 'PLAYING (%s)' % States.PLAYING,
 	States.GAME_OVER: 'GAME_OVER (%s)' % States.GAME_OVER,
 	States.PAUSED: 'PAUSED (%s)' % States.PAUSED,
@@ -76,15 +92,22 @@ var possible_next_states = {
 	},
 	States.START: {
 		States.EXIT: _exit,
-		States.LOADING: _from_start_to_loading,
+		States.SELECTING_LEVEL: _from_start_to_selecting_level
 		States.CREDITS: _from_start_to_credits
 	},
 	States.LOADING: {
 		States.START: _from_loading_to_start,
-		States.PLAYING: _from_loading_to_playing
+		States.READING: _from_loading_to_reading
+	},
+	States.READING: {
+		States.PLAYING: _from_reading_to_playing
+	},
+	States.SELECTING_LEVEL: {
+		States.START: _from_selecting_level_to_start,
+		States.LOADING: _from_selecting_level_to_loading
 	},
 	States.PLAYING: {
-		States.FINISHED: _do_nothing,
+		States.FINISHED: _from_playing_to_finished,
 		States.GAME_OVER: _do_nothing,
 		States.PAUSED: _do_nothing
 	},
@@ -110,7 +133,13 @@ var possible_next_states = {
 func _from_booting_to_loading():
 	get_tree().change_scene_to_file("res://scenes/loading.tscn")
 
-func _from_start_to_loading():
+func _from_start_to_selecting_level():
+	get_tree().change_scene_to_file("res://scenes/select_client.tscn")
+	
+func _from_selecting_level_to_start():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
+func _from_selecting_level_to_loading():
 	get_tree().change_scene_to_file("res://scenes/loading.tscn")
 	
 func _from_gameover_to_loading():
@@ -125,8 +154,14 @@ func _from_paused_to_loading():
 func _from_loading_to_start():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
-func _from_loading_to_playing():
-	get_tree().change_scene_to_file("res://scenes/gameplay1.tscn")
+func _from_reading_to_playing():
+	get_tree().change_scene_to_file(selected_level)
+	
+func _from_loading_to_reading():
+	get_tree().change_scene_to_file(selected_level_reading)
+	
+func _from_playing_to_finished():
+	get_tree().change_scene_to_file("res://scenes/results.tscn")
 	
 func _from_credits_to_start():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
