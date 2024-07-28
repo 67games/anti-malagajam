@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cto63fvk36nip"]
+[gd_scene load_steps=11 format=3 uid="uid://cto63fvk36nip"]
 
-[ext_resource type="Texture2D" uid="uid://dvbnokphj8dj1" path="res://assets/introscreen/jardintrasero1.png" id="1_e712s"]
+[ext_resource type="Texture2D" uid="uid://bvs8k7ekixwls" path="res://assets/introscreen/jardintrasero1.png" id="1_e712s"]
 [ext_resource type="Script" path="res://scenes/initial_scene.gd" id="1_ursui"]
-[ext_resource type="Texture2D" uid="uid://dl61au866syig" path="res://assets/introscreen/jardintrasero2.png" id="2_b8hp6"]
+[ext_resource type="Texture2D" uid="uid://xkli6uu6nfdj" path="res://assets/introscreen/jardintrasero2.png" id="2_b8hp6"]
+[ext_resource type="Texture2D" uid="uid://j6lgic1bqi16" path="res://assets/sprites/logo67games.png" id="4_yudny"]
+[ext_resource type="AudioStream" uid="uid://bsqnmka1btr63" path="res://assets/music/INTRO.mp3" id="5_5qjoy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uc65o"]
 animations = [{
@@ -17,6 +19,60 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="Animation" id="Animation_quhep"]
+resource_name = "Fade in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_decnk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ittsp"]
+resource_name = "Fade out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pxmw8"]
+_data = {
+"Fade in": SubResource("Animation_quhep"),
+"Fade out": SubResource("Animation_ittsp"),
+"RESET": SubResource("Animation_decnk")
+}
 
 [node name="InitialScene" type="Control"]
 layout_mode = 3
@@ -34,3 +90,25 @@ sprite_frames = SubResource("SpriteFrames_uc65o")
 autoplay = "default"
 frame_progress = 0.898987
 centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 321)
+scale = Vector2(5.2, 5.2)
+texture = ExtResource("4_yudny")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -33.0
+offset_top = -22.0
+offset_right = 1177.0
+offset_bottom = 671.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pxmw8")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5qjoy")
+volume_db = -16.705
