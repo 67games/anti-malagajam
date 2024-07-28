@@ -1,20 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://cca7cypglhiue"]
+[gd_scene load_steps=15 format=3 uid="uid://b87xch8oe1lu8"]
 
-[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_30hml"]
-[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_asgeu"]
-[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_ocjtj"]
-[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="4_r8gm7"]
-[ext_resource type="Texture2D" uid="uid://bkg0f14dmlh10" path="res://assets/sprites/gameplay_background/camilla.png" id="4_yqgqp"]
-[ext_resource type="Texture2D" uid="uid://dxntflp2iglsq" path="res://assets/sprites/booties/culoblancoynegro.png" id="5_yadsf"]
-[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="6_agada"]
-[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="7_msg5n"]
-[ext_resource type="Texture2D" uid="uid://dw7urypc0xktp" path="res://assets/sprites/flowers/mano.png" id="8_vj212"]
+[ext_resource type="Texture2D" uid="uid://dc2y1q2wnfciv" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_30hml"]
+[ext_resource type="Script" path="res://scenes/tuto.gd" id="1_ssl7e"]
+[ext_resource type="Texture2D" uid="uid://b0utxurnsp6ig" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_asgeu"]
+[ext_resource type="Texture2D" uid="uid://d0equb2mvgdho" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_ocjtj"]
+[ext_resource type="Texture2D" uid="uid://b4h6xay1spf62" path="res://assets/sprites/bar/barsquare.png" id="4_r8gm7"]
+[ext_resource type="Texture2D" uid="uid://dxukqwxsw7peb" path="res://assets/sprites/gameplay_background/camilla.png" id="4_yqgqp"]
+[ext_resource type="Texture2D" uid="uid://cdbngrxgxl8c7" path="res://assets/sprites/booties/culoblancoynegro.png" id="5_yadsf"]
+[ext_resource type="Texture2D" uid="uid://gv66b027y732" path="res://assets/sprites/bar/barv2.png" id="6_agada"]
+[ext_resource type="Texture2D" uid="uid://g1chfe7wn73s" path="res://assets/sprites/bar/barindicator.png" id="7_msg5n"]
+[ext_resource type="Texture2D" uid="uid://cdaj4wnukta6e" path="res://assets/sprites/flowers/mano.png" id="8_vj212"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="9_r5cab"]
-[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="10_vios6"]
-[ext_resource type="Texture2D" uid="uid://cgd38ygsnw2rn" path="res://assets/icons/keyboard_space.png" id="12_i8wro"]
-[ext_resource type="Texture2D" uid="uid://cktj2d671cgrg" path="res://assets/icons/mouse_left.png" id="13_a4eca"]
+[ext_resource type="Texture2D" uid="uid://cfa0sa45r34ur" path="res://assets/sprites/cut/mano.png" id="10_vios6"]
+[ext_resource type="Texture2D" uid="uid://dfwci7c45gac" path="res://assets/icons/keyboard_space.png" id="12_i8wro"]
+[ext_resource type="Texture2D" uid="uid://dcu1mo0h1o755" path="res://assets/icons/mouse_left.png" id="13_a4eca"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ssl7e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -26.0
@@ -262,3 +264,5 @@ offset_right = 1119.0
 offset_bottom = 55.0
 theme_override_fonts/font = ExtResource("9_r5cab")
 text = "Volver al Menú principal"
+
+[connection signal="pressed" from="BackToMenu" to="." method="_on_return_to_menu_pressed"]
