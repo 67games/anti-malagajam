@@ -37,4 +37,5 @@ func _on_resume_pressed():
 	pause_game()
 
 func _on_back_to_menu_pressed():
+	GameManager.paused = false
 	GameManager.change_state_with_loading(GameManager.States.START)
