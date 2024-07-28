@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bt3two47t6ic"]
 
 [ext_resource type="Script" path="res://scripts/client_1.gd" id="1_jydui"]
-[ext_resource type="Texture2D" uid="uid://bl4i86kwuxydq" path="res://assets/background/tattoo studio.png" id="2_je12k"]
-[ext_resource type="Texture2D" uid="uid://uwwo1bs52dfv" path="res://assets/sprites/characters/hannahmontana.png" id="3_oqjq4"]
+[ext_resource type="Texture2D" uid="uid://d1sshqvv63603" path="res://assets/background/tattoo studio.png" id="2_je12k"]
+[ext_resource type="Texture2D" uid="uid://dq8jg6l7f8v6p" path="res://assets/sprites/characters/hannahmontana.png" id="3_oqjq4"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="4_fe5l8"]
 
 [node name="Client1" type="Control"]
@@ -30,10 +30,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -243.0
-offset_top = -327.0
+offset_left = -292.0
+offset_top = -391.0
+offset_right = -49.0
+offset_bottom = -64.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_oqjq4")
 
 [node name="Label" type="Label" parent="."]
@@ -45,8 +48,8 @@ offset_bottom = 648.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_fe5l8")
 theme_override_font_sizes/font_size = 32
-text = "Si te soy sincero, lo que yo quiero,
-Es plantar una flor en mi jardín trasero"
+text = "Tatúame una cacha,
+cucaracha"
 
 [node name="NextChar" type="Timer" parent="."]
 

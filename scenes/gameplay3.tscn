@@ -1,21 +1,22 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdqabscqpy0hv"]
+[gd_scene load_steps=23 format=3 uid="uid://cdqabscqpy0hv"]
 
-[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_bae3u"]
+[ext_resource type="Texture2D" uid="uid://vfaewquhpybf" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_bae3u"]
 [ext_resource type="Script" path="res://scripts/gameplayManager.gd" id="1_tbyxd"]
 [ext_resource type="PackedScene" uid="uid://b4wns5chgbick" path="res://scenes/pause_menu.tscn" id="1_vxn7i"]
-[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_hgara"]
-[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_pd0gq"]
-[ext_resource type="Texture2D" uid="uid://dkj6c3i116bp4" path="res://assets/sprites/gameplay_background/zapato.png" id="4_7ptej"]
-[ext_resource type="Texture2D" uid="uid://bhuesoatm2lpm" path="res://assets/sprites/gameplay_background/zapato2.png" id="5_4anb4"]
-[ext_resource type="Texture2D" uid="uid://bkg0f14dmlh10" path="res://assets/sprites/gameplay_background/camilla.png" id="6_3gh2g"]
+[ext_resource type="Texture2D" uid="uid://gjewvqe443mu" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_hgara"]
+[ext_resource type="Texture2D" uid="uid://dqk70ysfl3xkg" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_pd0gq"]
+[ext_resource type="Texture2D" uid="uid://cov0evjuy1e8k" path="res://assets/sprites/gameplay_background/zapato.png" id="4_7ptej"]
+[ext_resource type="Texture2D" uid="uid://h80q7sermt4y" path="res://assets/sprites/gameplay_background/zapato2.png" id="5_4anb4"]
+[ext_resource type="Texture2D" uid="uid://do2bs25wsmtb4" path="res://assets/sprites/gameplay_background/camilla.png" id="6_3gh2g"]
+[ext_resource type="Texture2D" uid="uid://iigx28g5gs83" path="res://assets/sprites/gameplay_background/cerveza.png" id="7_1hiu2"]
 [ext_resource type="PackedScene" uid="uid://bd0otntfw0e1u" path="res://assets/tilemaps/tile_map.tscn" id="7_b62cg"]
-[ext_resource type="Texture2D" uid="uid://dnfhso8sfxunl" path="res://assets/sprites/booties/culo3.png" id="8_4ctkh"]
+[ext_resource type="Texture2D" uid="uid://dihuninr3odrx" path="res://assets/sprites/booties/culo3.png" id="8_4ctkh"]
 [ext_resource type="Script" path="res://scripts/bar.gd" id="9_tyaj7"]
-[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="10_avgqw"]
-[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="11_acgby"]
-[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="12_wylx6"]
-[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="13_rmie4"]
-[ext_resource type="Texture2D" uid="uid://cbrjkrbv5ly2e" path="res://assets/sprites/flowers/flor3.png" id="14_qhny3"]
+[ext_resource type="Texture2D" uid="uid://0eoufk1ghhf2" path="res://assets/sprites/bar/barv2.png" id="10_avgqw"]
+[ext_resource type="Texture2D" uid="uid://ddvjnujgjccl3" path="res://assets/sprites/bar/barsquare.png" id="11_acgby"]
+[ext_resource type="Texture2D" uid="uid://bi3ukcrtvlno1" path="res://assets/sprites/bar/barindicator.png" id="12_wylx6"]
+[ext_resource type="Texture2D" uid="uid://cnron7i8clvce" path="res://assets/sprites/cut/mano.png" id="13_rmie4"]
+[ext_resource type="Texture2D" uid="uid://cr1wc38vifpjb" path="res://assets/sprites/flowers/flor3.png" id="14_qhny3"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="16_mmv1o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
@@ -192,6 +193,11 @@ texture = ExtResource("5_4anb4")
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 scale = Vector2(5.2, 5.2)
 texture = ExtResource("6_3gh2g")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Background"]
+position = Vector2(460, 143)
+scale = Vector2(4, 4)
+texture = ExtResource("7_1hiu2")
 
 [node name="TileMap" parent="." instance=ExtResource("7_b62cg")]
 position = Vector2(0, 0)
