@@ -1,20 +1,21 @@
-[gd_scene load_steps=21 format=3 uid="uid://gsimbtbhkej4"]
+[gd_scene load_steps=22 format=3 uid="uid://gsimbtbhkej4"]
 
 [ext_resource type="Script" path="res://scripts/gameplayManager.gd" id="1_n53ay"]
-[ext_resource type="Texture2D" uid="uid://s50pq16gapdg" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_xhejc"]
-[ext_resource type="Texture2D" uid="uid://x50c8n67f7ve" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_eiwkt"]
-[ext_resource type="Texture2D" uid="uid://bdqcyg54i2nrb" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_yyhju"]
-[ext_resource type="Texture2D" uid="uid://dfis7af3wu35p" path="res://assets/sprites/gameplay_background/zapato.png" id="4_sj5pb"]
-[ext_resource type="Texture2D" uid="uid://8oyh3xgrjsem" path="res://assets/sprites/gameplay_background/zapato2.png" id="5_frwae"]
-[ext_resource type="Texture2D" uid="uid://i0h4kvbykrel" path="res://assets/sprites/gameplay_background/camilla.png" id="6_fx2h3"]
+[ext_resource type="PackedScene" uid="uid://b4wns5chgbick" path="res://scenes/pause_menu.tscn" id="1_nqkdu"]
+[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_xhejc"]
+[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_eiwkt"]
+[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_yyhju"]
+[ext_resource type="Texture2D" uid="uid://dkj6c3i116bp4" path="res://assets/sprites/gameplay_background/zapato.png" id="4_sj5pb"]
+[ext_resource type="Texture2D" uid="uid://bhuesoatm2lpm" path="res://assets/sprites/gameplay_background/zapato2.png" id="5_frwae"]
+[ext_resource type="Texture2D" uid="uid://bkg0f14dmlh10" path="res://assets/sprites/gameplay_background/camilla.png" id="6_fx2h3"]
 [ext_resource type="PackedScene" uid="uid://bd0otntfw0e1u" path="res://assets/tilemaps/tile_map.tscn" id="7_ne4d5"]
-[ext_resource type="Texture2D" uid="uid://cub7afvv1cute" path="res://assets/sprites/booties/culo2.png" id="8_p2eo3"]
+[ext_resource type="Texture2D" uid="uid://c50xw4fjv37ft" path="res://assets/sprites/booties/culo2.png" id="8_p2eo3"]
 [ext_resource type="Script" path="res://scripts/bar.gd" id="9_gbxso"]
-[ext_resource type="Texture2D" uid="uid://b55g40lq05pso" path="res://assets/sprites/bar/barv2.png" id="10_yv6at"]
-[ext_resource type="Texture2D" uid="uid://c8qd6crpmbwo0" path="res://assets/sprites/bar/barsquare.png" id="11_67wgu"]
-[ext_resource type="Texture2D" uid="uid://b4si6eymo5yw" path="res://assets/sprites/bar/barindicator.png" id="12_gmje7"]
-[ext_resource type="Texture2D" uid="uid://bv8qu2d0myc14" path="res://assets/sprites/cut/mano.png" id="13_xbhgp"]
-[ext_resource type="Texture2D" uid="uid://27q1ibrev71u" path="res://assets/sprites/flowers/flor2.png" id="14_cl4cs"]
+[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="10_yv6at"]
+[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="11_67wgu"]
+[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="12_gmje7"]
+[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="13_xbhgp"]
+[ext_resource type="Texture2D" uid="uid://m7q2ysm52t28" path="res://assets/sprites/flowers/flor2.png" id="14_cl4cs"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="16_lqxwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
@@ -194,6 +195,7 @@ texture = ExtResource("6_fx2h3")
 [node name="TileMap" parent="." instance=ExtResource("7_ne4d5")]
 position = Vector2(0, 0)
 layer_0/tile_data = PackedInt32Array(-1114100, 0, 0, -1048564, 0, 0, -983028, 0, 0, -917492, 0, 0, -917491, 0, 0, -983027, 0, 0, -1048563, 0, 0, -1114099, 0, 0, -1179637, 0, 0, -1179638, 0, 0, -1245174, 0, 0, -1310710, 0, 0, -1376246, 0, 0, -1441782, 0, 0, -1507318, 0, 0, -1507317, 0, 0, -1441781, 0, 0, -1376245, 0, 0, -1310709, 0, 0, -1245173, 0, 0, -1638388, 0, 0, -1572852, 0, 0, -1572851, 0, 0, -1638387, 0, 0, -1769458, 0, 0, -1703922, 0, 0, -1703921, 0, 0, -1703920, 0, 0, -1703919, 0, 0, -1769455, 0, 0, -1769456, 0, 0, -1769457, 0, 0, -1638382, 0, 0, -1572846, 0, 0, -1572845, 0, 0, -1638381, 0, 0, -1769452, 0, 0, -1703916, 0, 0, -1703915, 0, 0, -1769451, 0, 0, -1507311, 0, 0, -1441775, 0, 0, -1376239, 0, 0, -1310703, 0, 0, -1310704, 0, 0, -1376240, 0, 0, -1441776, 0, 0, -1507312, 0, 0, -1638378, 0, 0, -1572842, 0, 0, -1507306, 0, 0, -1441770, 0, 0, -1376234, 0, 0, -1310698, 0, 0, -1245162, 0, 0, -1179626, 0, 0, -1114090, 0, 0, -1048554, 0, 0, -1048553, 0, 0, -1114089, 0, 0, -1179625, 0, 0, -1245161, 0, 0, -1310697, 0, 0, -1376233, 0, 0, -1441769, 0, 0, -1507305, 0, 0, -1572841, 0, 0, -1638377, 0, 0, -983019, 0, 0, -917483, 0, 0, -851947, 0, 0, -851946, 0, 0, -851945, 0, 0, -786409, 0, 0, -786410, 0, 0, -786411, 0, 0, -786412, 0, 0, -851948, 0, 0, -917484, 0, 0, -983020, 0, 0, -983016, 0, 0, -917480, 0, 0, -917479, 0, 0, -917478, 0, 0, -917477, 0, 0, -983013, 0, 0, -983014, 0, 0, -983015, 0, 0, -1114084, 0, 0, -1114083, 0, 0, -1114082, 0, 0, -1114081, 0, 0, -1114080, 0, 0, -1114079, 0, 0, -1048543, 0, 0, -1048544, 0, 0, -1048545, 0, 0, -1048546, 0, 0, -1048547, 0, 0, -1048548, 0, 0, -983006, 0, 0, -917470, 0, 0, -917469, 0, 0, -983005, 0, 0, -851935, 0, 0, -786399, 0, 0, -786400, 0, 0, -851936, 0, 0, -851932, 0, 0, -786396, 0, 0, -720860, 0, 0, -655324, 0, 0, -655323, 0, 0, -720859, 0, 0, -786395, 0, 0, -851931, 0, 0, -589789, 0, 0, -524253, 0, 0, -524254, 0, 0, -589790, 0, 0, -458719, 0, 0, -393183, 0, 0, -393184, 0, 0, -458720, 0, 0, -327649, 0, 0, -262113, 0, 0, -262114, 0, 0, -262115, 0, 0, -262116, 0, 0, -327652, 0, 0, -327651, 0, 0, -327650, 0, 0, -589799, 0, 0, -524263, 0, 0, -524264, 0, 0, -589800, 0, 0, -327656, 0, 0, -262120, 0, 0, -262119, 0, 0, -327655, 0, 0, -196582, 0, 0, -131046, 0, 0, -131045, 0, 0, -196581, 0, 0, -458730, 0, 0, -393194, 0, 0, -393193, 0, 0, -458729, 0, 0, -327659, 0, 0, -262123, 0, 0, -262124, 0, 0, -327660, 0, 0, -65508, 0, 0, 28, 0, 0, 29, 0, 0, -65507, 0, 0, -720879, 0, 0, -655343, 0, 0, -589807, 0, 0, -524271, 0, 0, -458735, 0, 0, -458734, 0, 0, -458733, 0, 0, -393197, 0, 0, -393198, 0, 0, -393199, 0, 0, -393200, 0, 0, -393201, 0, 0, -393202, 0, 0, -458738, 0, 0, -458737, 0, 0, -458736, 0, 0, -524272, 0, 0, -589808, 0, 0, -655344, 0, 0, -720880, 0, 0, 65566, 0, 0, 131102, 0, 0, 196638, 0, 0, 262174, 0, 0, 262175, 0, 0, 196639, 0, 0, 131103, 0, 0, 65567, 0, 0, 327712, 0, 0, 393248, 0, 0, 393249, 0, 0, 327713, 0, 0, 458783, 0, 0, 524319, 0, 0, 589855, 0, 0, 655391, 0, 0, 655390, 0, 0, 589854, 0, 0, 524318, 0, 0, 458782, 0, 0, 458781, 0, 0, 458780, 0, 0, 524316, 0, 0, 524317, 0, 0, 327706, 0, 0, 393242, 0, 0, 393243, 0, 0, 327707, 0, 0, 720925, 0, 0, 786461, 0, 0, 786460, 0, 0, 786459, 0, 0, 786458, 0, 0, 786457, 0, 0, 786456, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 589847, 0, 0, 655383, 0, 0, 655382, 0, 0, 589846, 0, 0, 524309, 0, 0, 524308, 0, 0, 458772, 0, 0, 393236, 0, 0, 327700, 0, 0, 327701, 0, 0, 393237, 0, 0, 458773, 0, 0, -196592, 0, 0, -131056, 0, 0, -65520, 0, 0, 16, 0, 0, 65552, 0, 0, 131088, 0, 0, 131089, 0, 0, 65553, 0, 0, 17, 0, 0, -65519, 0, 0, -131055, 0, 0, -196591, 0, 0, 65554, 0, 0, 131090, 0, 0, 196626, 0, 0, 262162, 0, 0, 262163, 0, 0, 196627, 0, 0, 131091, 0, 0, 65555, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 262158, 0, 0, 196622, 0, 0, 131086, 0, 0, 65550, 0, 0, -327668, 0, 0, -262132, 0, 0, -262131, 0, 0, -327667, 0, 0, -720884, 0, 0, -655348, 0, 0, -655347, 0, 0, -720883, 0, 0, -983029, 0, 0, -917493, 0, 0, -851957, 0, 0, -786421, 0, 0, -786422, 0, 0, -851958, 0, 0, -917494, 0, 0, -983030, 0, 0, -983031, 0, 0, -983032, 0, 0, -983033, 0, 0, -983034, 0, 0, -917498, 0, 0, -917497, 0, 0, -917496, 0, 0, -917495, 0, 0, -1048571, 0, 0, -1048572, 0, 0, -1048573, 0, 0, -1048574, 0, 0, -1048575, 0, 0, -1048576, 0, 0, -1114112, 0, 0, -1114111, 0, 0, -1114110, 0, 0, -1114109, 0, 0, -1114108, 0, 0, -1114107, 0, 0, -917505, 0, 0, -851969, 0, 0, -851970, 0, 0, -917506, 0, 0, -851968, 0, 0, -786432, 0, 0, -786431, 0, 0, -786430, 0, 0, -786429, 0, 0, -851965, 0, 0, -851966, 0, 0, -851967, 0, 0, -720892, 0, 0, -655356, 0, 0, -655355, 0, 0, -720891, 0, 0, -655361, 0, 0, -589825, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -524287, 0, 0, -524288, 0, 0, -458753, 0, 0, -458754, 0, 0, -524290, 0, 0, -589826, 0, 0, -655362, 0, 0, -458750, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -458747, 0, 0, -458748, 0, 0, -458749, 0, 0, -327674, 0, 0, -262138, 0, 0, -196602, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -196599, 0, 0, -196600, 0, 0, -196601, 0, 0, -262137, 0, 0, -327673, 0, 0, -65531, 0, 0, 5, 0, 0, 4, 0, 0, -65532, 0, 0, 196614, 0, 0, 262150, 0, 0, 262151, 0, 0, 196615, 0, 0, 327692, 0, 0, 393228, 0, 0, 393229, 0, 0, 327693, 0, 0, 458763, 0, 0, 524299, 0, 0, 524298, 0, 0, 458762, 0, 0, 589833, 0, 0, 589832, 0, 0, 589831, 0, 0, 589830, 0, 0, 589829, 0, 0, 524293, 0, 0, 458757, 0, 0, 393221, 0, 0, 327685, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 0, 0, 589828, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 262146, 0, 0, 196610, 0, 0, 131074, 0, 0, 65538, 0, 0)
+level = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -578.0
@@ -258,7 +260,7 @@ offset = Vector2(0, -8.5)
 
 [node name="Cursor" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-z_index = 2
+z_index = 6
 scale = Vector2(4, 4)
 texture = ExtResource("13_xbhgp")
 centered = false
@@ -269,16 +271,16 @@ position = Vector2(72, -28)
 scale = Vector2(4, 4)
 texture = ExtResource("14_cl4cs")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="GameplayManager" type="Node2D" parent="."]
 process_mode = 3
 script = ExtResource("1_n53ay")
 
-[node name="Timer" type="Timer" parent="Node2D"]
+[node name="Timer" type="Timer" parent="GameplayManager"]
 process_mode = 3
 wait_time = 4.0
 one_shot = true
 
-[node name="Label" type="Label" parent="Node2D"]
+[node name="Label" type="Label" parent="GameplayManager"]
 process_mode = 3
 z_index = 3
 offset_left = -37.0
@@ -291,4 +293,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
+[node name="PauseMenu" parent="." instance=ExtResource("1_nqkdu")]
+visible = false
+z_index = 5
+
+[node name="LevelTimer" type="Label" parent="."]
+offset_left = 514.0
+offset_top = -323.0
+offset_right = 562.0
+offset_bottom = -283.0
+theme_override_colors/font_color = Color(0.741385, 0.741385, 0.741385, 1)
+theme_override_fonts/font = ExtResource("16_lqxwa")
+theme_override_font_sizes/font_size = 32
+text = "60"
+horizontal_alignment = 2
+
+[connection signal="timeout" from="GameplayManager/Timer" to="GameplayManager" method="_on_timer_timeout"]

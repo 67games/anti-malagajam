@@ -1,7 +1,7 @@
 extends Node2D
 
-var IMPULSE_FORCE = 125
-var SHAKE_RATE = 0.05
+@export var IMPULSE_FORCE = 125
+@export var SHAKE_RATE = 0.05
 
 @onready var base_bar = %BaseBar
 @onready var zone_bar = %ZoneBar
@@ -58,10 +58,13 @@ func _process(_delta):
 	var mouse_position = get_global_mouse_position()
 	cursor.position = mouse_position
 	
+	if GameManager.paused:
+		return
+	
 	var distance = point_bar.position.distance_to(zone_bar.position)
 	
 	if GameManager.is_painting():
-		zone_bar.scale.y -= 0.0005 * distance
+		zone_bar.scale.y -= 0.001 * distance
 	
 	if zone_bar.scale.y <= 0.05:
 		GameManager.stop_painting()
@@ -80,6 +83,9 @@ func _process(_delta):
 	
 
 func _input(event):
+	
+	if GameManager.paused:
+		return
 	
 	if event.is_action_pressed("Space"):
 		point_bar.apply_impulse(Vector2(0, -IMPULSE_FORCE))

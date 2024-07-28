@@ -3,13 +3,13 @@ extends Control
 @onready var mute_button = $MarginContainer/VBoxContainer/Mute
 
 func _on_start_tattooing_pressed():
-	GameManager.change_state(GameManager.States.LOADING)
+	GameManager.change_state(GameManager.States.SELECTING_LEVEL)
 
 func _on_mute_pressed():
-	if mute_button.text == "Mute":
-		mute_button.text = "Unmute"
+	if mute_button.text == "Silenciar":
+		mute_button.text = "Desilenciar"
 	else:
-		mute_button.text = "Mute"
+		mute_button.text = "Silenciar"
 
 
 

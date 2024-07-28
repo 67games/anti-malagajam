@@ -2,9 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
-
-[ext_resource type="Texture2D" uid="uid://cdrqr6a78vlgm" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
-
+[ext_resource type="Texture2D" uid="uid://jx1gqm1y5pne" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,21 +28,21 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
-text = "Start tattooing!"
+text = "Empezar a tatuar!"
 alignment = 0
 
 [node name="Mute" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
-text = "Mute"
+text = "Silenciar"
 alignment = 0
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
-text = "Credits
+text = "Créditos
 "
 alignment = 0
 
@@ -52,7 +50,7 @@ alignment = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_5omei")
 theme_override_font_sizes/font_size = 32
-text = "Quit the job!"
+text = "Dejar el curro!"
 alignment = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

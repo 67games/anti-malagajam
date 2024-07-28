@@ -1,20 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://b3rwsdru2j51e"]
+[gd_scene load_steps=23 format=3 uid="uid://b3rwsdru2j51e"]
 
 [ext_resource type="Script" path="res://scripts/gameplayManager.gd" id="1_dk56x"]
-[ext_resource type="Texture2D" uid="uid://s50pq16gapdg" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_n2kc6"]
-[ext_resource type="Texture2D" uid="uid://x50c8n67f7ve" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_wwhx8"]
-[ext_resource type="Texture2D" uid="uid://bdqcyg54i2nrb" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_08bub"]
-[ext_resource type="Texture2D" uid="uid://crcfe5lyqrv7y" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
-[ext_resource type="Texture2D" uid="uid://i0h4kvbykrel" path="res://assets/sprites/gameplay_background/camilla.png" id="4_bpelx"]
-[ext_resource type="Texture2D" uid="uid://bv8qu2d0myc14" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
+[ext_resource type="PackedScene" uid="uid://b4wns5chgbick" path="res://scenes/pause_menu.tscn" id="1_g03ba"]
+[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_n2kc6"]
+[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_wwhx8"]
+[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_08bub"]
+[ext_resource type="Texture2D" uid="uid://mjt63md07o1c" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
+[ext_resource type="Texture2D" uid="uid://bkg0f14dmlh10" path="res://assets/sprites/gameplay_background/camilla.png" id="4_bpelx"]
+[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
 [ext_resource type="Script" path="res://scripts/bar.gd" id="4_gu5of"]
-[ext_resource type="Texture2D" uid="uid://dfis7af3wu35p" path="res://assets/sprites/gameplay_background/zapato.png" id="5_13lay"]
-[ext_resource type="Texture2D" uid="uid://b55g40lq05pso" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
-[ext_resource type="Texture2D" uid="uid://c8qd6crpmbwo0" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
-[ext_resource type="Texture2D" uid="uid://8oyh3xgrjsem" path="res://assets/sprites/gameplay_background/zapato2.png" id="6_3c0qx"]
+[ext_resource type="Texture2D" uid="uid://dkj6c3i116bp4" path="res://assets/sprites/gameplay_background/zapato.png" id="5_13lay"]
+[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
+[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
+[ext_resource type="Texture2D" uid="uid://bhuesoatm2lpm" path="res://assets/sprites/gameplay_background/zapato2.png" id="6_3c0qx"]
 [ext_resource type="PackedScene" uid="uid://bd0otntfw0e1u" path="res://assets/tilemaps/tile_map.tscn" id="7_fqajh"]
-[ext_resource type="Texture2D" uid="uid://b4si6eymo5yw" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
-[ext_resource type="Texture2D" uid="uid://cr5hd6ag27mgc" path="res://assets/sprites/flowers/flor1.png" id="14_7h2ri"]
+[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
+[ext_resource type="Texture2D" uid="uid://c3lculu54cgpp" path="res://assets/sprites/flowers/flor1.png" id="14_7h2ri"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="16_fyjap"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
@@ -196,6 +197,7 @@ texture = ExtResource("4_bpelx")
 [node name="TileMap" parent="." instance=ExtResource("7_fqajh")]
 position = Vector2(0, 0)
 layer_0/tile_data = PackedInt32Array(-262117, 0, 0, -327653, 0, 0, -393189, 0, 0, -458725, 0, 0, -524261, 0, 0, -589797, 0, 0, -655333, 0, 0, -720869, 0, 0, -720870, 0, 0, -655334, 0, 0, -589798, 0, 0, -524262, 0, 0, -458726, 0, 0, -393190, 0, 0, -327654, 0, 0, -262118, 0, 0, -458724, 0, 0, -458723, 0, 0, -458722, 0, 0, -458721, 0, 0, -393185, 0, 0, -393186, 0, 0, -393187, 0, 0, -393188, 0, 0, -589794, 0, 0, -524258, 0, 0, -524257, 0, 0, -589793, 0, 0, -720864, 0, 0, -655328, 0, 0, -655327, 0, 0, -655326, 0, 0, -655325, 0, 0, -720861, 0, 0, -720862, 0, 0, -720863, 0, 0, -851934, 0, 0, -786398, 0, 0, -786397, 0, 0, -851933, 0, 0, -983004, 0, 0, -917468, 0, 0, -917467, 0, 0, -983003, 0, 0, -1048538, 0, 0, -1048537, 0, 0, -1114073, 0, 0, -1179609, 0, 0, -1245145, 0, 0, -1245146, 0, 0, -1179610, 0, 0, -1114074, 0, 0, -1179611, 0, 0, -1179612, 0, 0, -1179613, 0, 0, -1179614, 0, 0, -1245150, 0, 0, -1245149, 0, 0, -1245148, 0, 0, -1245147, 0, 0, -1376224, 0, 0, -1310688, 0, 0, -1310687, 0, 0, -1376223, 0, 0, -1441761, 0, 0, -1441762, 0, 0, -1441763, 0, 0, -1441764, 0, 0, -1441765, 0, 0, -1441766, 0, 0, -1507302, 0, 0, -1507301, 0, 0, -1507300, 0, 0, -1507299, 0, 0, -1507298, 0, 0, -1507297, 0, 0, -1376231, 0, 0, -1310695, 0, 0, -1245159, 0, 0, -1179623, 0, 0, -1179624, 0, 0, -1245160, 0, 0, -1310696, 0, 0, -1376232, 0, 0, -1376233, 0, 0, -1376234, 0, 0, -1310698, 0, 0, -1310697, 0, 0, -1376235, 0, 0, -1376236, 0, 0, -1310700, 0, 0, -1245164, 0, 0, -1245163, 0, 0, -1310699, 0, 0, -1179627, 0, 0, -1179628, 0, 0, -1114090, 0, 0, -1048554, 0, 0, -983018, 0, 0, -917482, 0, 0, -851945, 0, 0, -786409, 0, 0, -786410, 0, 0, -851946, 0, 0, -917481, 0, 0, -983017, 0, 0, -1048553, 0, 0, -1114089, 0, 0, -851944, 0, 0, -786408, 0, 0, -720872, 0, 0, -655336, 0, 0, -655335, 0, 0, -720871, 0, 0, -786407, 0, 0, -851943, 0, 0, -1114093, 0, 0, -1048557, 0, 0, -983021, 0, 0, -917485, 0, 0, -917486, 0, 0, -983022, 0, 0, -1048558, 0, 0, -1114094, 0, 0, -1572842, 0, 0, -1572841, 0, 0, -1638377, 0, 0, -1638378, 0, 0, -1703914, 0, 0, -1769450, 0, 0, -1769449, 0, 0, -1769448, 0, 0, -1769447, 0, 0, -1703911, 0, 0, -1703912, 0, 0, -1703913, 0, 0, -1507307, 0, 0, -1507308, 0, 0, -1507309, 0, 0, -1507310, 0, 0, -1441774, 0, 0, -1441773, 0, 0, -1441772, 0, 0, -1441771, 0, 0, -1376239, 0, 0, -1310703, 0, 0, -1310704, 0, 0, -1376240, 0, 0, -1245169, 0, 0, -1179633, 0, 0, -1114097, 0, 0, -1048561, 0, 0, -983025, 0, 0, -917489, 0, 0, -851953, 0, 0, -786417, 0, 0, -720881, 0, 0, -655345, 0, 0, -589809, 0, 0, -524274, 0, 0, -458738, 0, 0, -393202, 0, 0, -393201, 0, 0, -327665, 0, 0, -262129, 0, 0, -262130, 0, 0, -327666, 0, 0, -458737, 0, 0, -524273, 0, 0, -589810, 0, 0, -655346, 0, 0, -720882, 0, 0, -786418, 0, 0, -851954, 0, 0, -917490, 0, 0, -983026, 0, 0, -1048562, 0, 0, -1114098, 0, 0, -1179634, 0, 0, -1245170, 0, 0, -196592, 0, 0, -131056, 0, 0, -65520, 0, 0, 16, 0, 0, 65552, 0, 0, 65551, 0, 0, 65550, 0, 0, 131087, 0, 0, 131086, 0, 0, 131085, 0, 0, 65549, 0, 0, 65548, 0, 0, 131084, 0, 0, -65519, 0, 0, -131055, 0, 0, -196591, 0, 0, 17, 0, 0, -65525, 0, 0, 11, 0, 0, 10, 0, 0, -65526, 0, 0, -131063, 0, 0, -131064, 0, 0, -131065, 0, 0, -131066, 0, 0, -196602, 0, 0, -262138, 0, 0, -327674, 0, 0, -393210, 0, 0, -458746, 0, 0, -458745, 0, 0, -393209, 0, 0, -327673, 0, 0, -262137, 0, 0, -196601, 0, 0, -196600, 0, 0, -262136, 0, 0, -327672, 0, 0, -327671, 0, 0, -262135, 0, 0, -196599, 0, 0, -720883, 0, 0, -720884, 0, 0, -655348, 0, 0, -655347, 0, 0, -851957, 0, 0, -851958, 0, 0, -786422, 0, 0, -786421, 0, 0, -851965, 0, 0, -851966, 0, 0, -851967, 0, 0, -851968, 0, 0, -786432, 0, 0, -786431, 0, 0, -786430, 0, 0, -786429, 0, 0, -983036, 0, 0, -917500, 0, 0, -917499, 0, 0, -917498, 0, 0, -917497, 0, 0, -917496, 0, 0, -917495, 0, 0, -983031, 0, 0, -983032, 0, 0, -983033, 0, 0, -983034, 0, 0, -983035, 0, 0, -1048570, 0, 0, -1114106, 0, 0, -1114105, 0, 0, -1048569, 0, 0, -1048568, 0, 0, -1114104, 0, 0, -1048567, 0, 0, -1114103, 0, 0, -1179639, 0, 0, -1245175, 0, 0, -1310711, 0, 0, -1376247, 0, 0, -1376248, 0, 0, -1310712, 0, 0, -1245176, 0, 0, -1179640, 0, 0, -1638390, 0, 0, -1572854, 0, 0, -1507318, 0, 0, -1441782, 0, 0, -1441781, 0, 0, -1507317, 0, 0, -1572853, 0, 0, -1638389, 0, 0, -1638393, 0, 0, -1572857, 0, 0, -1507321, 0, 0, -1441785, 0, 0, -1376249, 0, 0, -1310713, 0, 0, -1310714, 0, 0, -1376250, 0, 0, -1441786, 0, 0, -1507322, 0, 0, -1572858, 0, 0, -1638394, 0, 0, -1638395, 0, 0, -1638396, 0, 0, -1572860, 0, 0, -1572859, 0, 0, -1703933, 0, 0, -1703934, 0, 0, -1769470, 0, 0, -1769469, 0, 0, -1769471, 0, 0, -1769472, 0, 0, -1703936, 0, 0, -1638400, 0, 0, -1572864, 0, 0, -1572863, 0, 0, -1638399, 0, 0, -1703935, 0, 0, -1572865, 0, 0, -1507329, 0, 0, -1441793, 0, 0, -1376257, 0, 0, -1310721, 0, 0, -1245185, 0, 0, -1179649, 0, 0, -1114113, 0, 0, -1114114, 0, 0, -1179650, 0, 0, -1245186, 0, 0, -1310722, 0, 0, -1376258, 0, 0, -1441794, 0, 0, -1507330, 0, 0, -1572866, 0, 0, -1310723, 0, 0, -1310724, 0, 0, -1245188, 0, 0, -1245187, 0, 0, -1114112, 0, 0, -1048576, 0, 0, -1048575, 0, 0, -1048574, 0, 0, -1048573, 0, 0, -1114109, 0, 0, -1114110, 0, 0, -1114111, 0, 0)
+level = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -578.0
@@ -260,7 +262,7 @@ offset = Vector2(0, -8.5)
 
 [node name="Cursor" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-z_index = 2
+z_index = 6
 scale = Vector2(4, 4)
 texture = ExtResource("4_d262r")
 centered = false
@@ -272,18 +274,19 @@ scale = Vector2(4, 4)
 texture = ExtResource("14_7h2ri")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_qifqt")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="GameplayManager" type="Node2D" parent="."]
 process_mode = 3
 script = ExtResource("1_dk56x")
 
-[node name="Timer" type="Timer" parent="Node2D"]
+[node name="Timer" type="Timer" parent="GameplayManager"]
 process_mode = 3
 wait_time = 4.0
 one_shot = true
 
-[node name="Label" type="Label" parent="Node2D"]
+[node name="Label" type="Label" parent="GameplayManager"]
 process_mode = 3
 z_index = 3
 offset_left = -37.0
@@ -296,4 +299,19 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
-[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
+[node name="PauseMenu" parent="." instance=ExtResource("1_g03ba")]
+visible = false
+z_index = 5
+
+[node name="LevelTimer" type="Label" parent="."]
+offset_left = 514.0
+offset_top = -323.0
+offset_right = 562.0
+offset_bottom = -283.0
+theme_override_colors/font_color = Color(0.741385, 0.741385, 0.741385, 1)
+theme_override_fonts/font = ExtResource("16_fyjap")
+theme_override_font_sizes/font_size = 32
+text = "60"
+horizontal_alignment = 2
+
+[connection signal="timeout" from="GameplayManager/Timer" to="GameplayManager" method="_on_timer_timeout"]

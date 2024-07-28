@@ -1,18 +1,34 @@
 extends TileMap
 
+@export var level: int
+
 @onready var tile_map = $"."
 @onready var cursor = %Cursor
 @onready var audio_stream_player_2d = $"../AudioStreamPlayer2D"
+@onready var level_timer_label = $"../LevelTimer"
+
+var score
 
 var tattoo_layer = 1
-
+var level_timer: Timer
 var machine_sound = preload("res://assets/sounds/machine.mp3")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	level_timer = Timer.new()
+	add_child(level_timer)
+	level_timer.start(60)
 	pass
 
-func _input(event):
+func _process(_delta):
+	level_timer_label.text = "%01d" % level_timer.time_left
+	
+	if level_timer.time_left < 1.0:
+		GameManager.score_by_level[level] = score
+		GameManager.change_state(GameManager.States.FINISHED)
+		print(GameManager.score_by_level)
+
+func _input(_event):
 	
 	if Input.is_action_just_pressed("click"):
 		GameManager.start_painting()
@@ -36,7 +52,9 @@ func _input(event):
 		
 		var differences = ((difference(tile_map.get_used_cells(1), tile_map.get_used_cells(0)).size() * 100) / tile_map.get_used_cells(0).size()) * 0.25
 		
-		print("current score: ", coincidences - differences if coincidences - differences > 0 else 0, "%")
+		score = coincidences - differences if coincidences - differences > 0 else 0
+		
+		print("current score: ", score, "%")
 		pass
 	
 	if Input.is_action_just_released("click"):
