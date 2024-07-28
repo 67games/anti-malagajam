@@ -20,3 +20,6 @@ func _on_credits_pressed():
 
 func _on_quit_the_job_pressed():
 	GameManager.change_state(GameManager.States.EXIT)
+
+func _on_tutorial_pressed():
+	GameManager.change_state(GameManager.States.TUTORIAL)

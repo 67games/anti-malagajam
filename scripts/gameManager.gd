@@ -70,7 +70,9 @@ enum States {
 	# Exiting the game
 	EXIT,
 	# Checking credits
-	CREDITS
+	CREDITS,
+	# Tutorial Screen
+	TUTORIAL
 }
 
 var current_state: States = States.BOOTING
@@ -89,7 +91,8 @@ var states_debug_names = {
 	States.PAUSED: 'PAUSED (%s)' % States.PAUSED,
 	States.FINISHED: 'FINISHED (%s)' % States.FINISHED,
 	States.EXIT: 'EXIT (%s)' % States.EXIT,
-	States.CREDITS: 'CREDITS (%s)' % States.CREDITS
+	States.CREDITS: 'CREDITS (%s)' % States.CREDITS,
+	States.TUTORIAL: 'TUTORIAL (%s)' % States.TUTORIAL
 }
 
 # Dict saving unique possible next states
@@ -103,7 +106,8 @@ var possible_next_states = {
 	States.START: {
 		States.EXIT: _exit,
 		States.SELECTING_LEVEL: _from_start_to_selecting_level,
-		States.CREDITS: _from_start_to_credits
+		States.CREDITS: _from_start_to_credits,
+		States.TUTORIAL: _from_start_to_tutorial
 	},
 	States.LOADING: {
 		States.START: _from_loading_to_start,
@@ -137,7 +141,9 @@ var possible_next_states = {
 	States.CREDITS: {
 		States.START: _from_credits_to_start
 	},
-	
+	States.TUTORIAL: {
+		States.START: _from_tutorial_to_start
+	}
 }
 
 func _from_booting_to_intro_screen():
@@ -183,6 +189,12 @@ func _from_credits_to_start():
 func _from_start_to_credits():
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
 	
+func _from_start_to_tutorial():
+	get_tree().change_scene_to_file("res://scenes/tuto.tscn")
+	
+func _from_tutorial_to_start():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
 func _exit():
 	print_debug('Exiting game')
 	get_tree().quit()
