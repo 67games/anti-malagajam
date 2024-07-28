@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdgmc2183y3f1" path="res://assets/background/backgroundmenu.png" id="2_ru3ww"]
 [ext_resource type="Texture2D" uid="uid://bebd5qqcl4yf8" path="res://assets/sprites/cut/camilla.png" id="4_6p5nx"]
 
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15

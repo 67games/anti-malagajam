@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://rs8yxddbklq"]
 
-[ext_resource type="Texture2D" uid="uid://vfaewquhpybf" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_ve3oe"]
+[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_ve3oe"]
 [ext_resource type="Script" path="res://scripts/credits_manager.gd" id="1_wqgaq"]
-[ext_resource type="Texture2D" uid="uid://gjewvqe443mu" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_u3l65"]
-[ext_resource type="Texture2D" uid="uid://dqk70ysfl3xkg" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_cwnd3"]
+[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_u3l65"]
+[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_cwnd3"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="4_cld6u"]
-[ext_resource type="Texture2D" uid="uid://bw1xtopnw2g3b" path="res://assets/icons/logo67gamespixel.png" id="6_jfc7k"]
+[ext_resource type="Texture2D" uid="uid://k88jiihcfotm" path="res://assets/icons/logo67gamespixel.png" id="6_jfc7k"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_wqgaq")

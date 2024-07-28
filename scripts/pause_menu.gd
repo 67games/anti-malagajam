@@ -6,7 +6,7 @@ var _old_start_painting_hooks = []
 var _old_stop_painting_hooks = []
 
 func _input(event):
-	if event.is_action_pressed("Esc"):
+	if event.is_action_pressed("Pause"):
 		pause_game()
 
 func _stash_painting_hooks():

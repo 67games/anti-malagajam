@@ -1,23 +1,24 @@
-[gd_scene load_steps=24 format=3 uid="uid://f0gf4spdoam4"]
+[gd_scene load_steps=25 format=3 uid="uid://b3rwsdru2j51e"]
 
 [ext_resource type="Script" path="res://scripts/gameplayManager.gd" id="1_dk56x"]
-[ext_resource type="PackedScene" uid="uid://bskb4mawxblwb" path="res://scenes/pause_menu.tscn" id="1_g03ba"]
-[ext_resource type="Texture2D" uid="uid://dc2y1q2wnfciv" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_n2kc6"]
-[ext_resource type="Texture2D" uid="uid://b0utxurnsp6ig" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_wwhx8"]
-[ext_resource type="Texture2D" uid="uid://d0equb2mvgdho" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_08bub"]
-[ext_resource type="Texture2D" uid="uid://beu7jwgu15pxx" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
-[ext_resource type="Texture2D" uid="uid://dxukqwxsw7peb" path="res://assets/sprites/gameplay_background/camilla.png" id="4_bpelx"]
-[ext_resource type="Texture2D" uid="uid://cfa0sa45r34ur" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
+[ext_resource type="PackedScene" uid="uid://b4wns5chgbick" path="res://scenes/pause_menu.tscn" id="1_g03ba"]
+[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_n2kc6"]
+[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_wwhx8"]
+[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_08bub"]
+[ext_resource type="Texture2D" uid="uid://mjt63md07o1c" path="res://assets/sprites/cut/culo.png" id="3_u8y5e"]
+[ext_resource type="Texture2D" uid="uid://bkg0f14dmlh10" path="res://assets/sprites/gameplay_background/camilla.png" id="4_bpelx"]
+[ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="4_d262r"]
 [ext_resource type="Script" path="res://scripts/bar.gd" id="4_gu5of"]
-[ext_resource type="Texture2D" uid="uid://6m0dahx3fvun" path="res://assets/sprites/gameplay_background/zapato.png" id="5_13lay"]
-[ext_resource type="Texture2D" uid="uid://gv66b027y732" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
-[ext_resource type="Texture2D" uid="uid://b4h6xay1spf62" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
-[ext_resource type="Texture2D" uid="uid://bp381tbngtry" path="res://assets/sprites/gameplay_background/zapato2.png" id="6_3c0qx"]
-[ext_resource type="Texture2D" uid="uid://cakja3gmb576d" path="res://assets/sprites/gameplay_background/cerveza.png" id="7_2lsya"]
+[ext_resource type="Texture2D" uid="uid://dkj6c3i116bp4" path="res://assets/sprites/gameplay_background/zapato.png" id="5_13lay"]
+[ext_resource type="Texture2D" uid="uid://b3m0gpto85tsp" path="res://assets/sprites/bar/barv2.png" id="5_iwua7"]
+[ext_resource type="Texture2D" uid="uid://c4p3d3lbr0v2q" path="res://assets/sprites/bar/barsquare.png" id="6_0mfk6"]
+[ext_resource type="Texture2D" uid="uid://bhuesoatm2lpm" path="res://assets/sprites/gameplay_background/zapato2.png" id="6_3c0qx"]
+[ext_resource type="Texture2D" uid="uid://buvdn578qdyp6" path="res://assets/sprites/gameplay_background/cerveza.png" id="7_2lsya"]
 [ext_resource type="PackedScene" uid="uid://bd0otntfw0e1u" path="res://assets/tilemaps/tile_map.tscn" id="7_fqajh"]
-[ext_resource type="Texture2D" uid="uid://g1chfe7wn73s" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
-[ext_resource type="Texture2D" uid="uid://qkhtg8pbx7r" path="res://assets/sprites/flowers/flor1.png" id="14_7h2ri"]
+[ext_resource type="Texture2D" uid="uid://bgmbeh7fab3u2" path="res://assets/sprites/bar/barindicator.png" id="7_ntnhp"]
+[ext_resource type="Texture2D" uid="uid://c3lculu54cgpp" path="res://assets/sprites/flowers/flor1.png" id="14_7h2ri"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="16_fyjap"]
+[ext_resource type="Texture2D" uid="uid://dg21ytr1ii8le" path="res://assets/icons/keyboard_p.png" id="19_pqdfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
 size = Vector2(20, 7)
@@ -314,10 +315,26 @@ offset_left = 514.0
 offset_top = -323.0
 offset_right = 562.0
 offset_bottom = -283.0
-theme_override_colors/font_color = Color(0.741385, 0.741385, 0.741385, 1)
 theme_override_fonts/font = ExtResource("16_fyjap")
 theme_override_font_sizes/font_size = 32
 text = "60"
 horizontal_alignment = 2
+
+[node name="PauseButton" type="CenterContainer" parent="."]
+offset_left = 390.0
+offset_top = 258.0
+offset_right = 597.0
+offset_bottom = 298.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseButton"]
+position = Vector2(0, 22)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_pqdfm")
+
+[node name="Label" type="Label" parent="PauseButton"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_fyjap")
+theme_override_font_sizes/font_size = 32
+text = "PAUSAR"
 
 [connection signal="timeout" from="GameplayManager/Timer" to="GameplayManager" method="_on_timer_timeout"]

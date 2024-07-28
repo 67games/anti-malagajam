@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdqabscqpy0hv"]
+[gd_scene load_steps=24 format=3 uid="uid://cdqabscqpy0hv"]
 
 [ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_bae3u"]
 [ext_resource type="Script" path="res://scripts/gameplayManager.gd" id="1_tbyxd"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpauu8num8wh" path="res://assets/sprites/cut/mano.png" id="13_rmie4"]
 [ext_resource type="Texture2D" uid="uid://cbrjkrbv5ly2e" path="res://assets/sprites/flowers/flor3.png" id="14_qhny3"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="16_mmv1o"]
+[ext_resource type="Texture2D" uid="uid://dg21ytr1ii8le" path="res://assets/icons/keyboard_p.png" id="19_anntj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7f02g"]
 size = Vector2(20, 7)
@@ -309,11 +310,27 @@ offset_left = 514.0
 offset_top = -323.0
 offset_right = 562.0
 offset_bottom = -283.0
-theme_override_colors/font_color = Color(0.741385, 0.741385, 0.741385, 1)
 theme_override_fonts/font = ExtResource("16_mmv1o")
 theme_override_font_sizes/font_size = 32
 text = "60"
 horizontal_alignment = 2
+
+[node name="PauseButton" type="CenterContainer" parent="."]
+offset_left = 390.0
+offset_top = 258.0
+offset_right = 597.0
+offset_bottom = 298.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PauseButton"]
+position = Vector2(0, 22)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_anntj")
+
+[node name="Label" type="Label" parent="PauseButton"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("16_mmv1o")
+theme_override_font_sizes/font_size = 32
+text = "PAUSAR"
 
 [connection signal="timeout" from="GameplayManager/Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="GameplayManager/Timer" to="GameplayManager" method="_on_timer_timeout"]
