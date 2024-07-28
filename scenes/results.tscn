@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://03wnm5fhbgqc"]
+[gd_scene load_steps=6 format=3 uid="uid://diuxmltcui4mm"]
 
 [ext_resource type="Script" path="res://scripts/results.gd" id="1_vi5vl"]
-[ext_resource type="Texture2D" uid="uid://f8y2rlk52k4y" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_x61e2"]
-[ext_resource type="Texture2D" uid="uid://dhwgu1gpnxk3h" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_gp2fb"]
-[ext_resource type="Texture2D" uid="uid://beyvkunajak46" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_uv4cv"]
+[ext_resource type="Texture2D" uid="uid://dc2y1q2wnfciv" path="res://assets/sprites/gameplay_background/tablon3.png" id="1_x61e2"]
+[ext_resource type="Texture2D" uid="uid://b0utxurnsp6ig" path="res://assets/sprites/gameplay_background/tablon2.png" id="2_gp2fb"]
+[ext_resource type="Texture2D" uid="uid://d0equb2mvgdho" path="res://assets/sprites/gameplay_background/tablon1.png" id="3_uv4cv"]
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="5_hjlnh"]
 
 [node name="Results" type="Control"]
@@ -158,57 +158,96 @@ position = Vector2(-169, -386)
 scale = Vector2(4, 4)
 texture = ExtResource("2_gp2fb")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -64.0
+offset_right = 806.0
+offset_bottom = 64.0
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ClientOne" type="Label" parent="HSplitContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ClientOne" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "Tatuaje del primer cliente:"
 
-[node name="ClientTwo" type="Label" parent="HSplitContainer/VBoxContainer"]
+[node name="ClientTwo" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "Tatuaje del segundo cliente:"
 
-[node name="ClientThree" type="Label" parent="HSplitContainer/VBoxContainer"]
+[node name="ClientThree" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "Tatuaje del tercer cliente:"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HSplitContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="ClientOne" type="Label" parent="HSplitContainer/VBoxContainer2"]
+[node name="ClientOne" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "0 %"
 
-[node name="ClientTwo" type="Label" parent="HSplitContainer/VBoxContainer2"]
+[node name="ClientTwo" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "0 %"
 
-[node name="ClientThree" type="Label" parent="HSplitContainer/VBoxContainer2"]
+[node name="ClientThree" type="Label" parent="MarginContainer/HSplitContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_hjlnh")
 theme_override_font_sizes/font_size = 32
 text = "0 %"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -432.0
+offset_top = -148.0
+offset_right = -47.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Repeat Level" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "Repetir Nivel"
+
+[node name="Go to Menu" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_hjlnh")
+theme_override_font_sizes/font_size = 32
+text = "Volver al Menu"
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Repeat Level" to="." method="_repeat_level"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Go to Menu" to="." method="_go_to_menu"]

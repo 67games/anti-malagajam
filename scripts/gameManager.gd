@@ -197,6 +197,12 @@ func get_stop_painting_hooks():
 func _do_nothing():
 	pass
 
+var after_loading_next_screen = null
+
+func change_state_with_loading(new_state):
+	after_loading_next_screen = new_state
+	change_state(States.LOADING)
+
 # Change State executing required functions
 func change_state(new_state):
 	save_scores()
