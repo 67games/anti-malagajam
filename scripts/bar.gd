@@ -2,6 +2,7 @@ extends Node2D
 
 @export var IMPULSE_FORCE = 125
 @export var SHAKE_RATE = 0.05
+@export var MIN_DISTANCE_BAR = 2.0
 
 @onready var base_bar = %BaseBar
 @onready var zone_bar = %ZoneBar
@@ -64,7 +65,7 @@ func _process(_delta):
 	var distance = point_bar.position.distance_to(zone_bar.position)
 	
 	if GameManager.is_painting():
-		zone_bar.scale.y -= 0.001 * distance
+		zone_bar.scale.y -= 0.001 * maxf(distance, MIN_DISTANCE_BAR)
 	
 	if zone_bar.scale.y <= 0.05:
 		GameManager.stop_painting()

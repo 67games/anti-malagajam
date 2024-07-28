@@ -186,6 +186,12 @@ func _exit():
 	print_debug('Exiting game')
 	get_tree().quit()
 
+func get_start_painting_hooks():
+	return _start_painting_hooks
+	
+func get_stop_painting_hooks():
+	return _stop_painting_hooks
+
 # Temporal function for game state changes that do nothing
 func _do_nothing():
 	pass
