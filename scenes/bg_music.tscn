@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://r4phtfplvoik"]
+[gd_scene load_steps=3 format=3 uid="uid://ca2t0r3ptcki2"]
 
-[ext_resource type="AudioStream" uid="uid://pkmgnol7yxxm" path="res://assets/music/JAM SONG.mp3" id="1_jac8h"]
+[ext_resource type="AudioStream" uid="uid://ww3v2ajjgbfb" path="res://assets/music/JAM SONG.mp3" id="1_jac8h"]
 [ext_resource type="Script" path="res://scripts/bg_music.gd" id="2_k71yd"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
