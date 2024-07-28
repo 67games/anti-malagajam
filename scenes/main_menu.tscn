@@ -2,8 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://djd71xqk81edx" path="res://assets/fonts/Kenney Mini Square Mono.ttf" id="1_5omei"]
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wsofq"]
-[ext_resource type="Texture2D" uid="uid://cdrqr6a78vlgm" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
-
+[ext_resource type="Texture2D" uid="uid://jx1gqm1y5pne" path="res://assets/sprites/cut/mesilla.png" id="3_2b4vf"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

@@ -45,6 +45,8 @@ func on_stop_painting(f):
 enum States {
 	# State of the game as it is starting
 	BOOTING,
+	# Intro Screen of the game
+	INTRO_SCREEN,
 	# Start Menu of the game
 	START,
 	# Loading sonme scene
@@ -73,6 +75,7 @@ var previous_state: States
 
 var states_debug_names = {
 	States.BOOTING: 'BOOTING (%s)' % States.BOOTING,
+	States.INTRO_SCREEN: 'INTRO_SCREEN (%s)' % States.INTRO_SCREEN,
 	States.START: 'START (%s)' % States.START,
 	States.LOADING: 'LOADING (%s)' % States.LOADING,
 	States.SELECTING_LEVEL: 'SELECTING_LEVEL (%s)' % States.SELECTING_LEVEL,
@@ -88,11 +91,14 @@ var states_debug_names = {
 # Dict saving unique possible next states
 var possible_next_states = {
 	States.BOOTING: {
-		States.LOADING: _from_booting_to_loading
+		States.INTRO_SCREEN: _from_booting_to_intro_screen
+	},
+	States.INTRO_SCREEN: {
+		States.START: _from_intro_screen_to_start
 	},
 	States.START: {
 		States.EXIT: _exit,
-		States.SELECTING_LEVEL: _from_start_to_selecting_level
+		States.SELECTING_LEVEL: _from_start_to_selecting_level,
 		States.CREDITS: _from_start_to_credits
 	},
 	States.LOADING: {
@@ -130,8 +136,11 @@ var possible_next_states = {
 	
 }
 
-func _from_booting_to_loading():
-	get_tree().change_scene_to_file("res://scenes/loading.tscn")
+func _from_booting_to_intro_screen():
+	get_tree().change_scene_to_file("res://scenes/initial_scene.tscn")
+
+func _from_intro_screen_to_start():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _from_start_to_selecting_level():
 	get_tree().change_scene_to_file("res://scenes/select_client.tscn")
@@ -188,12 +197,12 @@ func change_state(new_state):
 func _ready():
 	# print(get_tree().get_current_scene().name)
 	if get_tree().get_current_scene().name == 'MainGame':
-		change_state(States.LOADING)
+		change_state(States.INTRO_SCREEN)
 	# if get_tree().get_current_scene().name == 'Loading':
 		# await get_tree().create_timer(4.0).timeout
 		# change_state(States.START)
 	
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _input(event):
